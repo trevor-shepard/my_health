@@ -46,7 +46,7 @@ class SessionForm extends Component {
                         <option>Washington (excluding Clark & Cowlitz Counties)</option>
                     </select>
                     <label>
-                        MyChart Username
+                        MyHealth Username
                         <input type="text" onChange={this.handleInput('username')} />
                     </label>
                     <label>

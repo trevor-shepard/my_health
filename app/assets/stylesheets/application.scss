@@ -1,0 +1,154 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ html, body, header, nav, h1, a,
+ ul, li, strong, main, button, i,
+ section, img, div, h2, p, form,
+ fieldset, label, input, textarea,
+ span, article, footer, time, small {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font: inherit;
+   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+   color: inherit;
+   text-align: inherit;
+   text-decoration: inherit;
+   vertical-align: inherit;
+   box-sizing: border-box;
+   background: transparent;
+   -webkit-font-smoothing: antialiased;
+ }
+ 
+ ul {
+   list-style: none;
+ }
+ 
+ li {
+   list-style: none;
+ }
+ 
+ img {
+   display: block;
+   width: 100%;
+   height: auto;
+ }
+ 
+ input[type="password"],
+ input[type="email"],
+ input[type="text"],
+ input[type="submit"],
+ textarea,
+ button {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+ }
+ 
+ button,
+ input[type="submit"] {
+   cursor: pointer;
+ }
+ 
+ .group:after {
+   content: "";
+   display: block;
+   clear: both;
+ }
+
+
+
+
+.splash-body {
+    width: 100%;
+    height: 120%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: image-url('background.png');
+    background-size: cover;
+
+    
+}
+
+.splash-content {
+    width: 81%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 42px;
+ }
+
+ .splash-pitch-display {
+     min-height: 707px;
+     width: 75%;
+     background: white;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+ }
+
+ .splash-sidebar {
+     min-height: 707px;
+     width: 25%;
+     background-color: peru;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap
+ }
+
+ .splash-sidebar form {
+     width: 100%;
+ }
+
+ .logo-container {
+     width: 100%;
+     height: 138px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 31px;
+ }
+
+ .logo {
+     background-image: url('logo.png');
+     width: 350px;
+     height: 100px;   
+ }
+
+.splash-list {
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.splash-list li {
+    width: 50%;
+    height: 119px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-icon {
+    font-size: 69px;
+    margin-left: 49.667px;
+    margin-bottom: 69.333px; 
+}
