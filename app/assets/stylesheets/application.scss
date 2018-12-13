@@ -155,13 +155,11 @@
 }
 
 .logo {
-    background-image: url('logo.png');
+    background: image-url('MyHealth_Logo-01.png');
     width: 350px;
-    height: 100px;   
+    height: 100px;
+    background-size: cover;
 }
-
-
-
 
 // sidebar
 .splash-sidebar {
@@ -184,6 +182,18 @@
 
 .error-container {
     height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.alert-card {
+    background: image-url("login_warning.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80%;
+    width: auto;
+    margin-left: 24px; 
 }
 
 .login-form {
@@ -247,3 +257,4 @@
     color: #474747;
     margin-top: 20px;
 }
+

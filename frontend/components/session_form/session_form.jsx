@@ -35,10 +35,13 @@ class SessionForm extends Component {
     }
 
     render() {
-        let error
+        let error;
         if (this.props.errors.length) {
-                                                                                                // TODO: add warn image
-            error = <span className='alert card'>Login unsuccessful</span>
+                                                                                // TODO: add warn image
+            error = <div>
+                        <div className='alert-card'> </div>
+                        <div>Login Unsuccessful</div>
+                    </div>
         } else {
             error = <div> </div>
         }
@@ -71,6 +74,7 @@ class SessionForm extends Component {
                     </label>
                     <label>
                         Password
+                        <br></br>
                         <input type="password" onChange={this.handleInput('password')} />
                     </label>
                     <div className='login-button sign-in-button'>
