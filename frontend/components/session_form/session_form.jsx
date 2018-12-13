@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import { Link } from 'react-router-dom'
+
 
 class SessionForm extends Component {
     constructor(props) {
@@ -10,12 +12,22 @@ class SessionForm extends Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state)
         this.props.login(user);
+    }
+
+    demoLogin(e) {
+        e.preventDefault();
+        const demouser = {
+            username: 'tshepard',
+            password: 'password'
+        }
+        this.props.login(demouser)
     }
 
     handleInput(field) {
@@ -27,15 +39,23 @@ class SessionForm extends Component {
         if (this.props.errors.length) {
                                                                                                 // TODO: add warn image
             error = <span className='alert card'>Login unsuccessful</span>
+        } else {
+            error = <div> </div>
         }
 
         return (
-            <div>
-                { error }
-                <form onSubmit={this.handleSubmit}>
-                    <input type="hidden" name=""/>
-                    <p>Select the area where you receive care</p>
-                    <select>
+            <div className='form-container'>
+                <div className="language">
+                    <Link to='/'>Español</Link>
+                </div>
+                <div className="error-container">
+                    { error }
+                </div>
+                <form onSubmit={this.handleSubmit} className='login-form'>
+                    <div>
+                        <p>Select the area where you receive care</p>
+                    </div>
+                    <select className='login-form-select'>
                         <option>California, Oregon and SW Washington</option>
                         <option>Alaska</option>
                         <option>California</option>
@@ -53,8 +73,23 @@ class SessionForm extends Component {
                         Password
                         <input type="password" onChange={this.handleInput('password')} />
                     </label>
-                    <button>SIGN IN</button>
+                    <div className='login-button sign-in-button'>
+                        <button>SIGN IN</button>
+                    </div>
+                    <div className="forgot-cred">
+                        <a>Forgot Username?</a>
+                        <a>Forgot Password?</a>
+                    </div>
+                    
                 </form>
+                <h1>New User?</h1>
+                <div className='login-button sign-up-button'>
+                    <button>SIGN UP</button>
+                </div>
+                <h1>Demo Login</h1>
+                <div className='login-button sign-in-button'>
+                    <button onClick={this.demoLogin}>WELCOME</button>
+                </div>
             </div>
         )
     }
