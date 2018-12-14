@@ -12,6 +12,7 @@
 #  fax        :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  suite      :string
 #
 
 class Clinic < ApplicationRecord

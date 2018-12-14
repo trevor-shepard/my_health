@@ -18,9 +18,11 @@ Provider.destroy_all
 
 #providers
 doctor = Provider.create(lname: 'Tibbs', fname: "Aubre", degree: "MD" )
-pa = Provider.create(lname: "McDoogle", fname: "Lester", degree: "PA")
+pa = Provider.create(lname: "Beaudoin", fname: "Jennifer", degree: "PA")
 np = Provider.create(lname: "Flannigan", fname: "Cate", degree: "NP")
 rn = Provider.create(lname: "Iuras", fname: "Adriana", degree: "RN")
 msw = Provider.create(lname: "Jungus", fname: "Carl", degree: "MSW")
+
+Clinic.destroy_all
 
 
