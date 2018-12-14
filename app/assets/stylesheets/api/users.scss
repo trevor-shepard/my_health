@@ -1,3 +1,190 @@
 // Place all the styles related to the Api/Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.splash-body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: image-url('background.png');
+    background-size: cover;
+}
+
+.splash-content {
+    width: 81%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 22px;
+    color: #0C316F;
+    margin-bottom: 20px;
+ }
+
+
+
+// left side
+ .splash-pitch-display {
+     min-height: 707px;
+     width: 923px;
+     background: white;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+ }
+ 
+
+.splash-list-row {
+    margin-top: 32px;
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.splash-list-item {
+    width: 50%;
+    height: 119.31;
+    display: flex;
+
+}
+
+
+.splash-icon {
+    font-size: 69px;
+    margin-left: 49.667px;
+    margin-bottom: 69.333px; 
+}
+
+.splash-list-text {
+    margin-left: 25px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.splash-list-text h2 {
+    font-size: 1.15rem;
+    font-weight: bold;
+    padding-left: 2.5px;
+    margin-bottom: 15px;
+}
+.splash-list-text span {
+    font-size: .9rem;
+}
+
+
+.logo-container {
+    width: 100%;
+    height: 138px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 31px;
+}
+
+.logo {
+    background: image-url('MyHealth_Logo-01.png');
+    width: 350px;
+    height: 100px;
+    background-size: cover;
+}
+
+// sidebar
+.splash-sidebar {
+    min-height: 707px;
+    width: 310px;
+    background-color: #EAF0F6;
+}
+
+.form-container {
+    width: 90%;
+    margin: auto;
+}
+
+.language {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.error-container {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.alert-card {
+    background: image-url("login_warning.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80%;
+    width: auto;
+    margin-left: 24px; 
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+.login-form p {
+    font-size: .9rem;
+}
+
+.login-form-select {
+    height: 40px;
+}
+
+.login-form label {
+    width: 100%;
+    height: 40px;
+    background: #F9FFBD;
+    border: 1px solid grey;
+}
+
+.login-button {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-button * {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.sign-in-button {
+    text-align: center;
+    font-weight: bold;
+    background: #003073;
+    color: white;
+    margin-top: 15px;
+}
+
+.forgot-cred {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    font-size: .9rem;
+}
+
+.form-container h1 {
+    text-align: center;
+    height: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.15rem;
+}
+
+.sign-up-button {
+    font-weight: bold;
+    background: #FFC16E;
+    color: #474747;
+    margin-top: 20px;
+}

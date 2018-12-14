@@ -59,4 +59,8 @@ class Clinic < ApplicationRecord
     validates :state, inclusion: { in: STATES }
     validates :county, inclusion: { in: COUNTIES }
 
+
+
+
+    has_many :shifts
 end

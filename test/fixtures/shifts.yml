@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: shifts
+#
+#  id          :bigint(8)        not null, primary key
+#  clinic_id   :integer          not null
+#  provider_id :integer          not null
+#  start       :time             not null
+#  end         :text             not null
+#  date        :date             not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined. If you add columns to the
