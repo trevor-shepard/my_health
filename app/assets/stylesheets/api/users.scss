@@ -141,7 +141,7 @@
 .login-form label {
     width: 100%;
     height: 40px;
-    background: #F9FFBD;
+    background: white;
     border: 1px solid grey;
 }
 
@@ -189,66 +189,72 @@
     margin-top: 20px;
 }
 
+.other {
+    margin-top: 10px;
+}
+
+
+
 // Floating Labels/Placeholders for Input Fields- Codepen by Lucas Bebber -(https://codepen.io/lbebber/pen/uEHzD)
 
-@import "compass/css3";
+// @import "compass/css3";
 
-$padding-horizontal:20px;
-$highlight-color:#16abf0;
+// $padding-horizontal:20px;
+// $highlight-color:#16abf0;
 
 
 
-input, .floating-placeholder{
-  font-family:Helvetica, Arial, sans-serif;
-  font-size:20pt;
-  line-height:2.6em;
-  height:2.6em;
-  margin:0;
-  padding:0;
-  width:100%;
-}
-.floating-placeholder input:focus+label{
-  color:$highlight-color;
-}
-.floating-placeholder input[value]+label{
-  color:red;
-}
-.floating-placeholder{
-  position:relative;
-}
+// input, .floating-placeholder{
+//   font-family:Helvetica, Arial, sans-serif;
+//   font-size:20pt;
+//   line-height:2.6em;
+//   height:2.6em;
+//   margin:0;
+//   padding:0;
+//   width:100%;
+// }
+// .floating-placeholder input:focus+label{
+//   color:$highlight-color;
+// }
+// .floating-placeholder input[value]+label{
+//   color:red;
+// }
+// .floating-placeholder{
+//   position:relative;
+// }
 
-.floating-placeholder input{
-  font-size:20pt;
-  border:none;
-  outline:none;
-  position:absolute;
-  top:0;
-  left:0;
-  display:block;
-  background:transparent;
-  z-index:2;
-  border-bottom:1px solid #ccc;
-  text-indent:$padding-horizontal;
-}
+// .floating-placeholder input{
+//   font-size:20pt;
+//   border:none;
+//   outline:none;
+//   position:absolute;
+//   top:0;
+//   left:0;
+//   display:block;
+//   background:transparent;
+//   z-index:2;
+//   border-bottom:1px solid #ccc;
+//   text-indent:$padding-horizontal;
+// }
 
-.floating-placeholder:last-child input{
-  border-bottom:none;
-}
-.floating-placeholder label{
-  display:block;
-  position:absolute;
-  top:0;
-  left:$padding-horizontal;
-  font-size:20pt;
-  z-index:1;
-  @include transform-origin(0,0.0em);
-  @include transition(transform 160ms, color 200ms);
-  @include transform(scale(1,1) rotateY(0));
-  color:#999;
-}
-.floating-placeholder-float label{
-  @include transform(scale(0.55,0.55) rotateY(0));
-}
-.floating-placeholder-float input{
-  line-height:3.4em;
-}
+// .floating-placeholder:last-child input{
+//   border-bottom:none;
+// }
+// .floating-placeholder label{
+//   display:block;
+//   position:absolute;
+//   top:0;
+//   left:$padding-horizontal;
+//   font-size:20pt;
+//   z-index:1;
+//   @include transform-origin(0,0.0em);
+//   @include transition(transform 160ms, color 200ms);
+//   @include transform(scale(1,1) rotateY(0));
+//   color:#999;
+// }
+// .floating-placeholder-float label{
+//   @include transform(scale(0.55,0.55) rotateY(0));
+// }
+// .floating-placeholder-float input{
+//   line-height:3.4em;
+// }

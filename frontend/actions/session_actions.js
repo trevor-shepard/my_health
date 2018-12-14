@@ -48,6 +48,6 @@ export const signup = (user) => dispatch => (
     SessionApiUtil.signup(user)
     .then(
         (response) => dispatch(receiveCurrentUser(response)),
-        (response) => dispatch(receiveSessionErrors(response))
+        (response) => dispatch(receiveSessionErrors(response.responseJSON))
     )
 )

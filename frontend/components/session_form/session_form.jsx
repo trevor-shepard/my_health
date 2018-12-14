@@ -26,8 +26,13 @@ class SessionForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
+        this.errorsClear = this.errorsClear.bind(this);
 
     }
+
+    errorsClear() {
+        this.props.clearErrors()
+    } 
 
     handleSubmit(e) {
         e.preventDefault();
@@ -88,8 +93,8 @@ class SessionForm extends Component {
             other = (
                 <div>
                     <h1>Already a User?</h1>
-                    <div className='login-button sign-up-button'>
-                        <Link to="/login">LOGIN</Link>
+                    <div className='login-button sign-up-button' onClick={this.errorsClear} >
+                        <Link to="/login" className="other" >LOGIN</Link>
                     </div>
 
                 </div>
@@ -99,8 +104,8 @@ class SessionForm extends Component {
             other = (
                 <div>
                     <h1>New User?</h1>
-                    <div className='login-button sign-up-button'>
-                        <Link to="/signup">SIGN UP</Link>
+                    <div className='login-button sign-up-button other' onClick={this.errorsClear} >
+                        <Link to="/signup" className="other" >SIGN UP</Link>
                     </div>
 
                 </div>
@@ -138,14 +143,13 @@ class SessionForm extends Component {
                         <option>SW Washington (Clark & Cowlitz Counties)</option>
                         <option>Washington (excluding Clark & Cowlitz Counties)</option>
                     </select>
-                    <div class="floating-placeholder">
+
 
                         <label>
                             MyHealth Username
                             <input type="text"  onChange={this.handleInput('username')} />
                         </label>
 
-                    </div>
                     <label>
                         Password
                         <br></br>
