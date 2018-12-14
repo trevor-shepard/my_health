@@ -16,5 +16,47 @@
 #
 
 class Clinic < ApplicationRecord
+    STATES = %w(OR WA CA)
+
+    COUNTIES = %w(
+        Baker 
+        Benton
+        Clackamas
+        Clatsop
+        Columbia
+        Coos
+        Crook
+        Curry
+        Deschutes
+        Douglas
+        Gilliam
+        Grant
+        Harney
+        Hood River
+        Jackson
+        Jefferson
+        Josephine
+        Klamath
+        Lake
+        Lane
+        Lincoln
+        Linn
+        Malheur
+        Marion
+        Morrow
+        Multnomah
+        Polk
+        Sherman
+        Tillamook
+        Umatilla
+        Union
+        Wallowa
+        Wasco
+        Washington
+        Yamhill
+        )
     validates :name, :address, :state, :zip, :county, :phone, :fax, presence: true
+    validates :state, inclusion: { in: STATES }
+    validates :county, inclusion: { in: COUNTIES }
+
 end

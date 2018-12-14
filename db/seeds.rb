@@ -18,6 +18,7 @@ Provider.destroy_all
 
 #providers
 doctor = Provider.create(lname: 'Tibbs', fname: "Aubre", degree: "MD" )
+doctor2 = Provider.create(lname: 'Folger', fname: "Paula", degree: "MD" )
 pa = Provider.create(lname: "Beaudoin", fname: "Jennifer", degree: "PA")
 np = Provider.create(lname: "Flannigan", fname: "Cate", degree: "NP")
 rn = Provider.create(lname: "Iuras", fname: "Adriana", degree: "RN")
@@ -25,4 +26,5 @@ msw = Provider.create(lname: "Jungus", fname: "Carl", degree: "MSW")
 
 Clinic.destroy_all
 
-
+plazaPMG = Clinic.create(name: "Providence Medical Group-The Plaza", address: "5050 Northeast Hoyt Street", state: "OR", zip: 91213, county: "Multnomah", phone: "503 215-6405", fax: "503 215-6429", suite: "454")
+legacyClinic = Clinic.create(name: "LMG Geriatrics-GS", address: "2222 NW Lovejoy Ave", state: "OR", zip: 97210, county: "Multnomah", phone: "503 413-8010", fax: "503 494-5023", suite: "315")
