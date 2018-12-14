@@ -37,7 +37,6 @@ class SessionForm extends Component {
     render() {
         let error;
         if (this.props.errors.length) {
-                                                                                // TODO: add warn image
             error = <div>
                         <div className='alert-card'> </div>
                         <div>Login Unsuccessful</div>
