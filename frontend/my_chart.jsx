@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import App from './components/App'
-import { logout } from './actions/session_actions'
+import { logout, signup } from './actions/session_actions'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,12 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const store = configureStore(preloadedState);
 
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.logout = logout;
+  window.getState = store.getState
+  window.dispatch = store.dispatch
+  window.logout = logout
+  window.signup = signup
   
-  const root = document.getElementById('root');
+  const root = document.getElementById('root')
 
   
-  ReactDOM.render(<App store={ store } />, root);
+  ReactDOM.render(<App store={ store } />, root)
 });

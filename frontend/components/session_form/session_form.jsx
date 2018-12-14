@@ -6,28 +6,42 @@ import { Link } from 'react-router-dom'
 class SessionForm extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            username: '',
-            password: ''
-        };
+        
+
+        if (this.props.formType === 'SIGN UP') {
+            this.state = {
+                username: '',
+                password: '',
+                fname: '',
+                lname: '',
+                dob: null
+            }
+        } else {
+            this.state = {
+                username: '',
+                password: ''
+            };
+        }
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
+
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state)
-        this.props.login(user);
+        this.props.formSubmit(user);
     }
 
     demoLogin(e) {
         e.preventDefault();
-        const demouser = {
+        const demoUser = {
             username: 'tshepard',
             password: 'password'
         }
-        this.props.login(demouser)
+        this.props.login(demoUser)
     }
 
     handleInput(field) {
@@ -35,6 +49,8 @@ class SessionForm extends Component {
     }
 
     render() {
+
+        // conditional rendering ~ error
         let error;
         if (this.props.errors.length) {
             error = <div>
@@ -45,6 +61,59 @@ class SessionForm extends Component {
             error = <div> </div>
         }
 
+        //conditional rendering ~ form
+        let dob
+        let fname
+        let lname
+        let other
+        if (this.props.formType === 'SIGN UP') {
+            dob = (
+                <label>
+                    Date of Birth
+                    <input type="date" onChange={this.handleInput('dob')}/>
+                </label>
+            )
+            fname = (
+                <label>
+                    First Name
+                    <input type="input" onChange={this.handleInput('fname')} />
+                </label>
+            )
+            lname = (
+                <label>
+                    Last Name
+                    <input type="input" onChange={this.handleInput('lname')} />
+                </label>
+            )
+            other = (
+                <div>
+                    <h1>Already a User?</h1>
+                    <div className='login-button sign-up-button'>
+                        <Link to="/login">LOGIN</Link>
+                    </div>
+
+                </div>
+            )
+
+        } else {
+            other = (
+                <div>
+                    <h1>New User?</h1>
+                    <div className='login-button sign-up-button'>
+                        <Link to="/signup">SIGN UP</Link>
+                    </div>
+
+                </div>
+                
+            )
+        }
+
+
+
+
+
+
+
         return (
             <div className='form-container'>
                 <div className="language">
@@ -54,6 +123,8 @@ class SessionForm extends Component {
                     { error }
                 </div>
                 <form onSubmit={this.handleSubmit} className='login-form'>
+                    
+                    {/* core */}
                     <div>
                         <p>Select the area where you receive care</p>
                     </div>
@@ -76,22 +147,30 @@ class SessionForm extends Component {
                         <br></br>
                         <input type="password" onChange={this.handleInput('password')} />
                     </label>
+
+                    { fname }
+                    { lname }
+                    { dob }
+
+
                     <div className='login-button sign-in-button'>
-                        <button>SIGN IN</button>
+                        <button>{this.props.formType}</button>
                     </div>
+                    
+                </form>
                     <div className="forgot-cred">
                         <a>Forgot Username?</a>
                         <a>Forgot Password?</a>
                     </div>
-                    
-                </form>
-                <h1>New User?</h1>
-                <div className='login-button sign-up-button'>
-                    <button>SIGN UP</button>
-                </div>
-                <h1>Demo Login</h1>
+                
+
+                
+                { other }
+
+
+
                 <div className='login-button sign-in-button'>
-                    <button onClick={this.demoLogin}>WELCOME</button>
+                    <button onClick={this.demoLogin}>DEMO LOGIN</button>
                 </div>
             </div>
         )

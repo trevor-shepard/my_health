@@ -222,13 +222,14 @@
     justify-content: center;
 }
 
-.login-button button {
+.login-button * {
     width: 100%;
     height: 100%;
     text-align: center;
 }
 
 .sign-in-button {
+    text-align: center;
     font-weight: bold;
     background: #003073;
     color: white;

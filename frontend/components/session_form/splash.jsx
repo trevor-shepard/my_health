@@ -1,6 +1,10 @@
 import React from 'react'
 import LoginFormContainer from './session_container'
+import SignupFormContainer from './signup_container'
 import { Link } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom'
+
 
 export default () => (
     <div className="splash-body">
@@ -56,7 +60,13 @@ export default () => (
                 
             </div>
             <div className="splash-sidebar">
-                <LoginFormContainer />
+                <HashRouter>
+                    <Switch>
+                        <Route component={LoginFormContainer} path="/login" />
+                        <Route component={SignupFormContainer} path="/signup" />
+
+                    </Switch>
+                </HashRouter>
             </div>
 
         </div>
