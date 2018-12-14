@@ -7,7 +7,7 @@ export default () => (
         <div className="splash-content">
             <div className='splash-pitch-display'>
                 <div className="logo-container">
-                     <div className="logo"> </div> 
+                     <Link to='/' className="logo"> </Link> 
                 </div>
                 <div>
                     {/* Link to location pages */}
