@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_011706) do
+ActiveRecord::Schema.define(version: 2018_12_14_172459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2018_12_14_011706) do
     t.integer "clinic_id", null: false
     t.integer "provider_id", null: false
     t.time "start", null: false
-    t.text "end", null: false
     t.date "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "end"
     t.index ["clinic_id"], name: "index_shifts_on_clinic_id"
     t.index ["provider_id"], name: "index_shifts_on_provider_id"
   end

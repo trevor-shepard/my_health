@@ -13,4 +13,8 @@
 class Provider < ApplicationRecord
     validates :lname, :degree, presence: true
     validates :degree,  inclusion: { in: %w(MD PA NP ND RN MSW) }
+
+    has_many :shifts
+
+    has_many :clinics, through: :shifts
 end

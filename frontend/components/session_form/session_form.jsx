@@ -138,10 +138,14 @@ class SessionForm extends Component {
                         <option>SW Washington (Clark & Cowlitz Counties)</option>
                         <option>Washington (excluding Clark & Cowlitz Counties)</option>
                     </select>
-                    <label>
-                        MyHealth Username
-                        <input type="text" onChange={this.handleInput('username')} />
-                    </label>
+                    <div class="floating-placeholder">
+
+                        <label>
+                            MyHealth Username
+                            <input type="text"  onChange={this.handleInput('username')} />
+                        </label>
+
+                    </div>
                     <label>
                         Password
                         <br></br>
