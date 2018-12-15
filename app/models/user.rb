@@ -23,8 +23,6 @@ class User < ApplicationRecord
     
     has_many :appointments
 
-
-
     after_initialize :ensure_token
 
     def self.find_by_cred(username, password)
