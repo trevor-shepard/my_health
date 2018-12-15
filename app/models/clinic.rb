@@ -13,6 +13,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  suite      :string
+#  city       :string
 #
 
 class Clinic < ApplicationRecord
@@ -55,7 +56,7 @@ class Clinic < ApplicationRecord
         Washington
         Yamhill
         )
-    validates :name, :address, :state, :zip, :county, :phone, :fax, presence: true
+    validates :name, :address, :city, :state, :zip, :county, :phone, :fax, presence: true
     validates :state, inclusion: { in: STATES }
     validates :county, inclusion: { in: COUNTIES }
 

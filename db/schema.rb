@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_172459) do
+ActiveRecord::Schema.define(version: 2018_12_15_012511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "provider_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "start", null: false
+    t.datetime "end", null: false
+    t.text "notes"
+    t.string "reason"
+    t.index ["provider_id"], name: "index_appointments_on_provider_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
 
   create_table "clinics", force: :cascade do |t|
     t.string "name", null: false
@@ -26,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_172459) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "suite"
+    t.string "city"
   end
 
   create_table "providers", force: :cascade do |t|
@@ -39,11 +53,10 @@ ActiveRecord::Schema.define(version: 2018_12_14_172459) do
   create_table "shifts", force: :cascade do |t|
     t.integer "clinic_id", null: false
     t.integer "provider_id", null: false
-    t.time "start", null: false
-    t.date "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.time "end"
+    t.datetime "start", null: false
+    t.datetime "end", null: false
     t.index ["clinic_id"], name: "index_shifts_on_clinic_id"
     t.index ["provider_id"], name: "index_shifts_on_provider_id"
   end

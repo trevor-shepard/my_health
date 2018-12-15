@@ -54,13 +54,14 @@ class SessionForm extends Component {
     }
 
     render() {
-
+        //TODO - Custom error display
         // conditional rendering ~ error
         let error;
         if (this.props.errors.length) {
             error = <div>
                         <div className='alert-card'> </div>
-                        <div>Login Unsuccessful</div>
+                        
+                        <div> {this.props.errors[0]} </div>
                     </div>
         } else {
             error = <div> </div>
@@ -75,18 +76,20 @@ class SessionForm extends Component {
             dob = (
                 <label>
                     Date of Birth
-                    <input type="date" onChange={this.handleInput('dob')}/>
+                    <input type="date" placeholder='' onChange={this.handleInput('dob')}/>
                 </label>
             )
             fname = (
                 <label>
                     First Name
+                    <br/>
                     <input type="input" onChange={this.handleInput('fname')} />
                 </label>
             )
             lname = (
                 <label>
                     Last Name
+                    <br/>
                     <input type="input" onChange={this.handleInput('lname')} />
                 </label>
             )

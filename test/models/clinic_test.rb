@@ -13,6 +13,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  suite      :string
+#  city       :string
 #
 
 require 'test_helper'

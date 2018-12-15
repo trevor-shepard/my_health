@@ -1,14 +1,16 @@
 # == Schema Information
 #
-# Table name: shifts
+# Table name: appointments
 #
 #  id          :bigint(8)        not null, primary key
-#  clinic_id   :integer          not null
+#  user_id     :integer          not null
 #  provider_id :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  start       :datetime         not null
 #  end         :datetime         not null
+#  notes       :text
+#  reason      :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
