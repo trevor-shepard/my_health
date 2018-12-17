@@ -5,6 +5,10 @@
     flex-direction: row;
     align-items: flex-end;
     box-shadow: 0 4px 2px -2px gray;
+    z-index: 1;
+    background-color: white;
+    position: fixed;
+    top: 0px;
 }
 
 .nav-links {
