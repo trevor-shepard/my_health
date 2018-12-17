@@ -1,0 +1,42 @@
+#header {
+    height: 95.33px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.nav-links {
+    height: 100%;
+    widows: 1280px;
+    margin-left: 81px;
+    margin-right: 81px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.nav-logo {
+    height: 86.67px;
+    width: 217.59px;
+    background: image-url('MyHealth_Logo-01.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.nav-item {
+    height: 85px;
+    width: 115px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;    
+
+}
+
+.nav-icon {
+    font-size: 36px;
+    padding: 5px;
+    margin: 2px;
+
+}

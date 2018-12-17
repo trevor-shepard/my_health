@@ -22,6 +22,7 @@ class User < ApplicationRecord
     attr_reader :password
     
     has_many :appointments
+    has_many :providers, through: :appointments
 
     after_initialize :ensure_token
 

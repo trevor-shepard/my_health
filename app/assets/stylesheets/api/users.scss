@@ -76,7 +76,7 @@
 
 
 .logo-container {
-    width: 100%;
+    width: auto;
     height: 138px;
     display: flex;
     align-items: center;
@@ -84,11 +84,11 @@
     margin-bottom: 31px;
 }
 
-.logo {
+.logo-splash {
     background: image-url('MyHealth_Logo-01.png');
+    background-size: cover;
     width: 350px;
     height: 100px;
-    background-size: cover;
 }
 
 // sidebar

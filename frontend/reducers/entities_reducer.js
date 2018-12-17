@@ -2,10 +2,12 @@ import { combineReducers } from 'redux';
 
 import userReducer from './user_reducer';
 import appointmentReducer from './appointments_reducer'
+import providerReducer from './provider_reducer'
 
 const entitiesReducer = combineReducers({
     user: userReducer,
-    appointments: appointmentReducer
+    appointments: appointmentReducer,
+    providers: providerReducer
 });
 
 
