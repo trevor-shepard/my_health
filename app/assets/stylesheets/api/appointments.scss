@@ -1,3 +1,14 @@
 // Place all the styles related to the Api::Appointments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.reason-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.reason-item {
+    height: 104px;
+    width: 453px;
+}

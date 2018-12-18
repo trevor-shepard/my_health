@@ -54,3 +54,35 @@
    display: block;
    clear: both;
  }
+
+ .content-container {
+  margin-top: 96.33px;
+  width: 100%;
+  background-color: #216AAB;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 800px;
+}
+
+.content {
+  padding-top: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 800px;
+  width: 960.69px;
+}
+
+.sidebar {
+  width: 320px;
+  background-color: #EAF5FB;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.blue-hover:hover {
+  background-color: #0091EA;
+}

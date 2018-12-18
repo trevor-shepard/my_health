@@ -2,8 +2,8 @@ import React from 'react'
 import LoginFormContainer from './session_container'
 import SignupFormContainer from './signup_container'
 import { Link } from 'react-router-dom'
-import { HashRouter } from 'react-router-dom';
-import { Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
+
 
 
 export default () => (
@@ -19,7 +19,7 @@ export default () => (
                 </div>
                 <div className='splash-list-row splash-row-one'>
                     <div className='splash-list-item'>
-                        <i className="far fa-comments splash-icon"></i>
+                        <i className="far fa-comments welcome-sidebar-icon"></i>
                         <div className="splash-list-text">
                             <h2>Communicate with your doctor</h2>
                             <span className="info">
@@ -28,7 +28,7 @@ export default () => (
                         </div>
                     </div>
                     <div className='splash-list-item'>
-                        <i className="fas fa-poll-h splash-icon"></i>
+                        <i className="fas fa-poll-h welcome-sidebar-icon"></i>
                         <div className="splash-list-text">
                             <h2>Access your test results</h2>
                             <span className="info">
@@ -39,7 +39,7 @@ export default () => (
                 </div>
                 <div className='splash-list-row'>
                     <div className='splash-list-item'>
-                        <i className="fas fa-pills splash-icon"></i>
+                        <i className="fas fa-pills welcome-sidebar-icon"></i>
                         <div className="splash-list-text">
                             <h2>Request prescription refills</h2>
                             <span className="info">
@@ -48,7 +48,7 @@ export default () => (
                         </div>
                     </div>
                     <div className='splash-list-item'>
-                        <i className="fas fa-calendar-day splash-icon"></i>
+                        <i className="fas fa-calendar-day welcome-sidebar-icon"></i>
                         <div className="splash-list-text">
                             <h2>Manage your appointments</h2>
                             <span className="info">

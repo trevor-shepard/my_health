@@ -1,30 +1,23 @@
-.welcome-container {
-    margin-top: 96.33px;
-    width: 100%;
-    background-color: #216AAB;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
 
-.welcome-content {
-    padding-top: 10px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    min-height: 800px;
-    width: 960.69px;
-}
+
 
 .welcome-content * {
     margin-left: 22px;
     margin-right: 22px;
 }
 
+
+
+// appointment dispay
 .welcome-appointment-content {
     border: 1px solid #E0E0E0;
     display: flex;
+    overflow: scroll;
+}
+
+.welcome-message {
+    font-size: 2rem;
+    color: #003073;
 }
 
 .appointment-list {
@@ -37,17 +30,35 @@
     margin: 2px;
 }
 
-.appointment-list-item:hover {
-    background-color: #0091EA;
+
+
+
+// sidebar
+
+.sidebar h1 {
+    font-size: 1.4em;
+    margintop: 16px;
 }
 
-.w-sidebar {
-    width: 320px;
-    background-color: #EAF5FB;
 
+.sidebar-item {
+    height: 64.11px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
 }
-.welcome-message {
-    font-size: 2rem;
-    color: #003073;
+
+
+
+.welcome-sidebar-icon {
+    font-size: 2.5rem;
 }
+
+.sidebar-item div {
+    margin-top: 12px;
+    margin-left: 12px;
+}
+
 

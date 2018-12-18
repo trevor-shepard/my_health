@@ -1,12 +1,12 @@
 import React from 'react';
-import { Switch } from 'react-router-dom'
+import { Switch, HashRouter } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import { Provider } from 'react-redux';
-import { HashRouter } from 'react-router-dom';
+
 import Splash from './session_form/splash'
 import WelcomeContainer from './welcome/welcome_container'
 import NavBarContainer from './navbar/navbar_container'
-
+import AppointmentFormContainer from './appointment/appointment_form_container'
 
 
 
@@ -18,6 +18,7 @@ const App = ({ store }) => (
         <Switch>
           <AuthRoute exact path="/login" component={Splash} />
           <AuthRoute exact path='/signup' component={Splash} />
+          <ProtectedRoute path='/appointments' component={AppointmentFormContainer} />
           <ProtectedRoute path='/' component={WelcomeContainer} />
         </Switch>
       </div>  

@@ -1,7 +1,7 @@
 import React from 'react'
 import { jsonToDate, getWeekday, getMonth } from '../../util/date'
 
-const AppointmentItem = ({ appointment, provider, }) => {
+const AppointmentItem = ({ appointment, provider }) => {
     let reason
     if (appointment.reason === 'new_problem') {
         reason = 'Regular Office Visit'
@@ -17,7 +17,7 @@ const AppointmentItem = ({ appointment, provider, }) => {
 
     
     return (
-        <div className='appointment-list-item'>
+        <div className='appointment-list-item blue-hover'>
             <div> {reason} with {provider.fname} {provider.lname}, </div>
             <div>{provider.degree}</div>
             <div>{getWeekday(date.getDay().toString())} {getMonth(date.getMonth())} {date.getDate()}, {date.getFullYear()}</div>

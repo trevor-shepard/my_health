@@ -28,6 +28,10 @@ export const recieveAppointmentErrors = (errors) => ({
     errors
 })
 
+export const clearAppointmentErrors = () => ({
+    type: CLEAR_APPOINTMENT_ERRORS
+})
+
 // thunk action controllers
 
 export const createAppointment = (appointment) => dispatch => (
