@@ -26,12 +26,6 @@ class Appointment < ApplicationRecord
 
     belongs_to :user
 
-
-    has_many :shifts, through: :provider
-
-    has_many :clinics, through: :shifts
-
-
     # Custom Validations
 
 
@@ -40,7 +34,7 @@ class Appointment < ApplicationRecord
     end
 
     def available_timeslot_provider
-        self.shifts.each do |shift|
+        self.provider.shifts.each do |shift|
             if (self.start > shift.start && self.start < shift.end)
                 errors.add(:start, "appointment time is unavailable, #{self.provider.fname} #{self.provider.lname} has a conflicting appointment")
             end
