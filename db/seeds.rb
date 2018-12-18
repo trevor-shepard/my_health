@@ -20,25 +20,25 @@ last_friday = last_thursday.tomorrow
 
 
 
-User.destroy_all
+User.delete_all
 
 # users
-trevor = User.create(username: 'tshepard', password: "password", fname: "Trevor", lname: "Shepard", dob: Time.new(1989, 11, 20))
 tori = User.create(username: 'snap', password: "password", fname: "Tori", lname: "Shepard", dob: Time.new(1990, 11, 30))
 trev = User.create(username: 'ttibbs', password: "password", fname: "Trev", lname: "Tibbs", dob: Time.new(1989, 11, 20))
+trevor = User.create(username: 'tshepard', password: "password", fname: "Trevor", lname: "Shepard", dob: Time.new(1989, 11, 20))
 
 #providers
-Provider.destroy_all
+Provider.delete_all
 
-aubre = Provider.create(lname: 'Tibbs', fname: "Aubre", degree: "MD" )
 danny = Provider.create(lname: 'Toboggin', fname: "Mantis", degree: "MD" )
 jenn = Provider.create(lname: "Beaudoin", fname: "Jennifer", degree: "PA")
 cate = Provider.create(lname: "Flannigan", fname: "Cate", degree: "NP")
 adriana = Provider.create(lname: "Iuras", fname: "Adriana", degree: "RN")
 aaron = Provider.create(lname: "Jungus", fname: "Carl", degree: "MSW")
+aubre = Provider.create(lname: 'Tibbs', fname: "Aubre", degree: "MD" )
 
 #clinics
-Clinic.destroy_all
+Clinic.delete_all
 
 plazaPMG = Clinic.create(
     name: "Providence Medical Group-The Plaza", 
@@ -76,36 +76,39 @@ clinic = Clinic.create(
     suite: "315"
 )
 
+
 #shifts
-Shift.destroy_all
+Shift.delete_all
 
 aubre_monday = Shift.create(
-    clinic_id: aubre.id,
-    provider_id: plazaPMG.id, 
+    clinic_id: clinic.id,
+    provider_id: aubre.id, 
     start: DateTime.new(next_monday.year, next_monday.month, next_monday.day, 8, 30),
     end: DateTime.new(next_monday.year, next_monday.month, next_monday.day, 16, 0)
     )
+
+
 aubre_tuesday = Shift.create(
-    clinic_id: aubre.id,
-    provider_id: plazaPMG.id, 
+    clinic_id: clinic.id,
+    provider_id: aubre.id, 
     start: DateTime.new(next_tuesday.year, next_tuesday.month, next_tuesday.day, 8, 30),
     end: DateTime.new(next_tuesday.year, next_tuesday.month, next_tuesday.day, 16, 0)
     )
 aubre_wednesday = Shift.create(
-    clinic_id: aubre.id,
-    provider_id: plazaPMG.id, 
+    clinic_id: clinic.id,
+    provider_id: aubre.id, 
     start: DateTime.new(next_wednesday.year, next_wednesday.month, next_wednesday.day, 8, 30),
     end: DateTime.new(next_wednesday.year, next_wednesday.month, next_wednesday.day, 16, 0)
     )
 aubre_thursday = Shift.create(
-    clinic_id: aubre.id,
-    provider_id: plazaPMG.id, 
+    clinic_id: clinic.id,
+    provider_id: aubre.id, 
     start: DateTime.new(next_thursday.year, next_thursday.month, next_thursday.day, 8, 30),
     end: DateTime.new(next_thursday.year, next_thursday.month, next_thursday.day, 16, 0)
     )
 aubre_friday = Shift.create(
-    clinic_id: aubre.id,
-    provider_id: plazaPMG.id, 
+    clinic_id: clinic.id,
+    provider_id: aubre.id, 
     start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 8, 30),
     end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 16, 0)
     )
@@ -113,7 +116,7 @@ aubre_friday = Shift.create(
 
 #appointment
 
-Appointment.destroy_all
+Appointment.delete_all
 
 trevor_followup = Appointment.create(
     user_id: trevor.id,

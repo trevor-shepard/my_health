@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import ReasonForm from './reason_form'
+import DemographicConfirm from './demographic_confirm'
 
 
 class AppointmentForm extends Component {
@@ -16,6 +17,13 @@ class AppointmentForm extends Component {
         }
 
         this.setReason = this.setReason.bind(this)
+        this.confirmDemographics = this.confirmDemographics.bind(this)
+        this.setLocation = this.setLocation.bind(this)
+        this.setProvider = this.setProvider.bind(this)
+    }
+
+    componentDidMount() {
+        this.props.fetchClinics()
     }
 
     setReason(reason) {
@@ -23,12 +31,68 @@ class AppointmentForm extends Component {
             this.setState(
                 {reason: reason}, 
                 () => {
-                    this.props.history.push('/appointment/workd')
-                }
-                )
+    
+                    this.props.clearAppointmentErrors()
+                    this.props.history.push('/appointments/demographics')
+                })
             
         }
     }
+
+    confirmDemographics() {
+        return (e) => {
+            
+            this.props.clearAppointmentErrors()
+            this.props.history.push('/appointments/location')
+        }
+    }
+
+    setLocation() {
+        return (clinic_id) => {
+            this.setState(
+                {clinic_id: clinic_id},
+                () => {
+                    this.props.clearAppointmentErrors()
+                    this.props.history.push('/appointments/provider')
+                })
+        }
+    }
+
+
+    setProvider() {
+        return (provider_id) => {
+            this.setState(
+                {provider_id: provider_id},
+                () => {
+                    this.props.clearAppointmentErrors()
+                    this.props.history.push('/appointments/date')
+                })
+        }
+    }
+
+    setDate() {
+        return (date) => {
+            this.setState(
+                {start: date},
+                () => {
+                    this.props.clearAppointmentErrors()
+                    this.props.history.push('/appointments/time')
+                }
+            )
+        }
+    }
+
+    setTime() {
+
+        return this.setState(
+            
+        )
+    }
+
+
+
+
+
 
     render() {
         return (
@@ -36,8 +100,9 @@ class AppointmentForm extends Component {
                 <div className='content'>
                     <HashRouter>
                         <Switch>
-                            <Route path='/appointments/new' component={() => <ReasonForm  setReason={this.setReason} />}/>
-                            <Route path='/appointments/demographics' component={() => <ReasonForm  setReason={this.setReason} />}/>
+                            <Route path='/appointments/new' component={() => <ReasonForm  setReason={this.setReason} />} />
+                            <Route path='/appointments/demographics' component={() => <DemographicConfirm  confirmDemographics={this.confirmDemographics} />} />
+                            <Route path='/appointments/location' component={()=> <LocationForm setLocation={this.setLocation} />} />
                         </Switch>
                     </HashRouter>
                     

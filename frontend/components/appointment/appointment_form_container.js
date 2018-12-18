@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 
 import { createAppointment, clearAppointmentErrors } from '../../actions/appointment_actions'
+import { fetchClinics } from '../../actions/clinic_actions'
 import AppointmentForm from './appointment_form'
 
 
@@ -11,7 +12,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = () => dispatch => ({
     createAppointment: (appointment) => dispatch(createAppointment(appointment)),
-    clearAppointmentErrors: () => dispatch(clearAppointmentErrors())  
+    clearAppointmentErrors: () => dispatch(clearAppointmentErrors()),
+    fetchClinics: () => dispatch(fetchClinics())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentForm)

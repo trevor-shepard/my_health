@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const ReasonForm = ({ setReason }) => {
     
     return (
         <div >
-            <div>Choose your reason for scheduling an appointment from the options below.</div>
+            <div className='margin-twenty-one'>Choose your reason for scheduling an appointment from the options below.</div>
             <div className='reason-list'>
                 <div className="blue-hover reason-item" onClick={ setReason('new_problem') } >
                     <h1>New Problem</h1>
@@ -22,10 +22,10 @@ const ReasonForm = ({ setReason }) => {
                     <h1>Well Child Check</h1>
                     <div>A routine Well Child visit.</div>
                 </div>
+                <div>
+                    <Link to="/">BACK TO THE HOME PAGE</Link>
+                </div>
             </div>
-            <dir>
-                <button>BACK TO THE HOME PAGE</button>
-            </dir>
         </div>
     )
 }
