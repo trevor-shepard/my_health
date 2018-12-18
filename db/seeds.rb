@@ -23,9 +23,53 @@ last_friday = last_thursday.tomorrow
 User.delete_all
 
 # users
-tori = User.create(username: 'snap', password: "password", fname: "Tori", lname: "Shepard", dob: Time.new(1990, 11, 30))
-trev = User.create(username: 'ttibbs', password: "password", fname: "Trev", lname: "Tibbs", dob: Time.new(1989, 11, 20))
-trevor = User.create(username: 'tshepard', password: "password", fname: "Trevor", lname: "Shepard", dob: Time.new(1989, 11, 20))
+tori = User.create(
+    username: 'snap', 
+    password: "password", 
+    fname: "Tori", 
+    lname: "Shepard", 
+    dob: Time.new(1990, 11, 30),
+    address: '1400 SW Belmont St',
+    state: 'Oregon',
+    city: 'Portland',
+    zip: 97213,
+    county: 'Multnomah',
+    country: 'United States of America',
+    email: 'snap@ohsnap.org',
+    home_phone: '999-999-9999'
+    )
+
+trev = User.create(
+    username: 'ttibbs', 
+    password: "password", 
+    fname: "Trev", 
+    lname: "Tibbs", 
+    dob: Time.new(1989, 11, 20),
+    address: '1400 SW Belmont St',
+    state: 'Oregon',
+    city: 'Portland',
+    zip: 97213,
+    county: 'Multnomah',
+    country: 'United States of America',
+    email: 'snap@ohsnap.org',
+    home_phone: '999-999-9999'
+    )
+trevor = User.create(
+    username: 'tshepard', 
+    password: "password", 
+    fname: "Trevor", 
+    lname: "Shepard", 
+    dob: Time.new(1989, 11, 20),
+    address: '1400 SW Belmont St',
+    state: 'Oregon',
+    city: 'Portland',
+    zip: 97213,
+    county: 'Multnomah',
+    country: 'United States of America',
+    email: 'trevor@veryemployable.org',
+    home_phone: '999-999-9999'
+    
+    )
 
 #providers
 Provider.delete_all

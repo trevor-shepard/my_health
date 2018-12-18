@@ -15,7 +15,7 @@ const ReasonForm = ({ setReason }) => {
                     <div>A visit to follow up on a aspecific medical concern.</div>
                 </div>
                 <div className="blue-hover reason-item" onClick={ setReason('anual_wellness')}>
-                    <h1>Anuall Wellness Exam/Physical</h1>
+                    <h1>Annual Wellness Exam/Physical</h1>
                     <div>A complete physical exam.</div>
                 </div>
                 <div className="blue-hover reason-item" onClick={ setReason('child')}>

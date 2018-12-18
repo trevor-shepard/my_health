@@ -11,6 +11,17 @@
 #  dob             :date             not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  address         :string           not null
+#  city            :string           not null
+#  state           :string           not null
+#  zip             :integer          not null
+#  county          :string           not null
+#  country         :string           not null
+#  email           :string           not null
+#  home_phone      :string           not null
+#  mobile_phone    :string
+#  work_phone      :string
+#  preferred_phone :string           default("home"), not null
 #
 
 require 'test_helper'

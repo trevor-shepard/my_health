@@ -101,7 +101,7 @@ class AppointmentForm extends Component {
                     <HashRouter>
                         <Switch>
                             <Route path='/appointments/new' component={() => <ReasonForm  setReason={this.setReason} />} />
-                            <Route path='/appointments/demographics' component={() => <DemographicConfirm  confirmDemographics={this.confirmDemographics} />} />
+                            <Route path='/appointments/demographics' component={() => <DemographicConfirm  confirmDemographics={this.confirmDemographics} user={this.props.user} />} />
                             <Route path='/appointments/location' component={()=> <LocationForm setLocation={this.setLocation} />} />
                         </Switch>
                     </HashRouter>
