@@ -63,4 +63,8 @@ class Clinic < ApplicationRecord
     has_many :shifts
 
     has_many :providers, through: :shifts
+
+    has_many :primary_providers,
+        foreign_key: :primary_clinic_id,
+        class_name: :Provider
 end

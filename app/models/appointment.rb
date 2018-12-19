@@ -34,11 +34,11 @@ class Appointment < ApplicationRecord
     end
 
     def available_timeslot_provider
-        self.provider.shifts.each do |shift|
-            if (self.start > shift.start && self.start < shift.end)
+        self.provider.appointments.each do |appointment|
+            if (self.start > appointment.start && self.start < appointment.end)
                 errors.add(:start, "appointment time is unavailable, #{self.provider.fname} #{self.provider.lname} has a conflicting appointment")
             end
-            if (self.end > shift.start && self.end < shift.end)
+            if (self.end > appointment.start && self.end < appointment.end)
                 errors.add(:end, "appointment time is unavailable, #{self.provider.fname} #{self.provider.lname} has a conflicting appointment")
             end
         end

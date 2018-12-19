@@ -19,8 +19,53 @@ class Shift < ApplicationRecord
     belongs_to :clinic
 
     belongs_to :provider
+    
 
     def start_after_end
         errors.add(:end, "end of appointment must be before start") unless self.start < self.end
     end
+
+    def available_timeblocks
+        # find all 30 min blocks not taken by another appointment and return
+        date = self.start.to_date
+        appointments = self.provider.appointments.select{ |el| el.start.to_date === date }
+        timeblocks = []
+        proposed_start = self.start.to_time
+        end_time = self.end.to_time
+        
+        until proposed_start >= end_time
+            timeblocks.push({ start: proposed_start, end: proposed_start + 1200 }) if valid_timeblock?(appointments, proposed_start)
+            proposed_start += 1200
+        end
+        
+        return timeblocks
+    end
+
+    def valid_timeblock?(appointments, start_time)
+        appointments.each do |appointment|
+            appointment_start = appointment.start.to_time
+            appointment_end = appointment.end.to_time
+            return false if appointment_start <= start_time && start_time < appointment_end
+            return false if appointment_start <= (start_time + 20) && (start_time + 20) < appointment_end
+        end
+        true
+    end
+
+
+
+    def self.find_next_available(provider_id, start_date, end_date)
+        shifts = Shift.where(provider_id: provider_id)
+        sorted = shifts.order(:start)
+        
+        sorted.each do |shift|
+            break if shift.start >= end_date
+            return shift if shift.start >= start_date
+            
+        end
+        
+        return nil
+    end
+
+
+    
 end

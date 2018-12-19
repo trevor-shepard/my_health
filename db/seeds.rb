@@ -71,16 +71,6 @@ trevor = User.create(
     
     )
 
-#providers
-Provider.delete_all
-
-danny = Provider.create(lname: 'Toboggin', fname: "Mantis", degree: "MD" )
-jenn = Provider.create(lname: "Beaudoin", fname: "Jennifer", degree: "PA")
-cate = Provider.create(lname: "Flannigan", fname: "Cate", degree: "NP")
-adriana = Provider.create(lname: "Iuras", fname: "Adriana", degree: "RN")
-aaron = Provider.create(lname: "Jungus", fname: "Carl", degree: "MSW")
-aubre = Provider.create(lname: 'Tibbs', fname: "Aubre", degree: "MD" )
-
 #clinics
 Clinic.delete_all
 
@@ -119,6 +109,32 @@ clinic = Clinic.create(
     fax: "503 494-5023", 
     suite: "315"
 )
+    
+#providers
+Provider.delete_all
+
+cate = Provider.create(
+    lname: "Flannigan", 
+    fname: "Cate", 
+    degree: "NP",
+    primary_clinic_id: plazaPMG.id,
+    specialty: 'Internal Medicine'
+    )
+
+aaron = Provider.create(
+    lname: "Jungus", 
+    fname: "Carl", 
+    degree: "MSW",
+    primary_clinic_id: legacyClinic.id,
+    specialty: 'Sports Medicine'
+    )
+aubre = Provider.create(
+    lname: 'Tibbs', 
+    fname: "Aubre", 
+    degree: "MD" ,
+    primary_clinic_id: clinic.id,
+    specialty: 'Internal Medicine' 
+    )
 
 
 #shifts
@@ -162,7 +178,10 @@ aubre_friday = Shift.create(
 
 Appointment.delete_all
 
-trevor_followup = Appointment.create(
+
+
+
+trevor_followup1 = Appointment.create(
     user_id: trevor.id,
     provider_id: aubre.id,
     start: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 30),
@@ -171,28 +190,39 @@ trevor_followup = Appointment.create(
     notes: 'poisin oak rash'
 )
 
-trevor_followup = Appointment.create(
+trevor_followup3 = Appointment.create(
     user_id: trevor.id,
     provider_id: aubre.id,
     start: DateTime.new(last_friday.year, last_friday.month, last_friday.day, 13, 30),
-    end: DateTime.new(last_friday.year, last_friday.month, last_friday.day, 13, 50),
-    reason: 'new_problem',
-    notes: 'cotards delustion outbreak'
+end: DateTime.new(last_friday.year, last_friday.month, last_friday.day, 13, 50),
+reason: 'new_problem',
+notes: 'cotards delustion outbreak'
 )
-trevor_followup = Appointment.create(
+trevor_followup4 = Appointment.create(
     user_id: trevor.id,
     provider_id: aubre.id,
     start: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 30),
-    end: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 50),
-    reason: 'new_problem',
-    notes: 'cotards delustion outbreak'
+end: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 50),
+reason: 'new_problem',
+notes: 'cotards delustion outbreak'
 )
 
 tori_followup = Appointment.create(
     user_id: tori.id,
     provider_id: aubre.id,
     start: DateTime.new(last_tuesday.year, last_tuesday.month, last_tuesday.day, 13, 30),
-    end: DateTime.new(last_tuesday.year, last_tuesday.month, last_tuesday.day, 13, 50),
-    reason: 'new_problem',
-    notes: 'clinomania'
+end: DateTime.new(last_tuesday.year, last_tuesday.month, last_tuesday.day, 13, 50),
+reason: 'new_problem',
+notes: 'clinomania'
 )
+
+
+trevor_followup2 = Appointment.create(
+    user_id: User.last.id,
+    provider_id: Provider.last.id,
+    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 13, 30),
+    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 13, 50),
+    reason: 'new_problem',
+    notes: 'future appointment'
+)
+

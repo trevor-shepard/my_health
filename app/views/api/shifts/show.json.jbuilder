@@ -1,0 +1,1 @@
+json.extract! @shift, :clinic_id, :provider_id, :start, :end

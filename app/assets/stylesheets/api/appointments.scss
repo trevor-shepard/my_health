@@ -1,6 +1,13 @@
 // Place all the styles related to the Api::Appointments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.two-rem {
+    font-size: 2rem;
+    color: #003073;
+    margin: 20px;
+}
+
 .reason-list {
     width: 100%;
     display: flex;
@@ -18,4 +25,113 @@
 
 .margin-twenty-one {
     margin: 21px;
+}
+
+.demographic-content {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.demographic-item {
+    width: 50%;
+    height: 75px;
+    padding: 20px;
+}
+
+.demographic-item-title {
+    text-decoration: underline;
+}
+
+.checkbox {
+    margin: 20px;
+    height: 35px;
+    width: 241px;
+    border: 1px solid black;
+    border-radius: 1px;
+    padding-top: 7px;
+    text-align: center;
+}
+
+.demographic-confirm-button-container {
+    display: flex;
+    padding: 20px;
+    width: 270px;
+    justify-content: space-between;
+}
+
+.demographic-confirm-button-container * {
+    height: 35px;
+    width: 105px;
+    text-align: center;
+    padding-top: 7px;
+    border: 1px solid grey;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.demographic-confirm-button-container a {
+    color: white;
+    background-color: #FFC16E;
+}
+
+.unselected  {
+    background: #DBDBDB;
+}
+
+.selected {
+    background-color: #003073;
+    color: white;
+}
+
+.m-button{
+    height: 35px;
+    width: auto;
+    text-align: center;
+    padding:10px;
+    padding-top: 7px;
+    border: 1px solid grey;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #003073;
+    color: white;
+    margin: 10px;
+    margin-top: 30px;
+}
+
+.back-button {
+    margin-left: 0;
+}
+
+.start-over-button{
+    color: white;
+    background-color: #FFC16E;
+    
+}
+
+.margin-twenty {
+    margin: 20px;
+}
+
+
+// provider select
+.provider-select-item {
+    box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2);
+    margin: 0.25rem 0.5%;
+    padding: 0.5rem;
+    border: 1px solid #e0e0e0;
+    min-height: 5rem;
+    width: 300px;
+    border-left: 5px solid transparent;
+
+}
+
+
+.provider-select-item-title {
+    font-size: 1.1rem;
+}
+
+.selected-bar {
+    border-left: 5px solid #003073;
+
 }

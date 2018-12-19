@@ -7,6 +7,8 @@ import { fetchAppointment, fetchAppointments, updateAppointment, createAppointme
 import { jsonToDate } from './util/date'
 
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
   let preloadedState
   if (window.currentUser){
