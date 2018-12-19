@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import ReasonForm from './reason_form'
 import DemographicConfirm from './demographic_confirm'
-
+import LocationForm from './location'
+import ProviderSelect from './provider_select'
 
 class AppointmentForm extends Component {
     constructor(props) {
@@ -13,7 +14,8 @@ class AppointmentForm extends Component {
             start: null,
             end: null,
             notes: null,
-            reason: null
+            reason: null,
+            city: null
         }
 
         this.setReason = this.setReason.bind(this)
@@ -40,17 +42,16 @@ class AppointmentForm extends Component {
     }
 
     confirmDemographics() {
-        return (e) => {
-            
-            this.props.clearAppointmentErrors()
-            this.props.history.push('/appointments/location')
-        }
+
+        
+        this.props.clearAppointmentErrors()
+        this.props.history.push('/appointments/location')
     }
 
     setLocation() {
-        return (clinic_id) => {
+        return (city) => {
             this.setState(
-                {clinic_id: clinic_id},
+                {city: city},
                 () => {
                     this.props.clearAppointmentErrors()
                     this.props.history.push('/appointments/provider')
@@ -100,9 +101,34 @@ class AppointmentForm extends Component {
                 <div className='content'>
                     <HashRouter>
                         <Switch>
-                            <Route path='/appointments/new' component={() => <ReasonForm  setReason={this.setReason} />} />
-                            <Route path='/appointments/demographics' component={() => <DemographicConfirm  confirmDemographics={this.confirmDemographics} user={this.props.user} />} />
-                            <Route path='/appointments/location' component={()=> <LocationForm setLocation={this.setLocation} />} />
+                            <Route 
+                                path='/appointments/new' 
+                                component={() => <ReasonForm  setReason={this.setReason} />} 
+                            />
+                            <Route 
+                                path='/appointments/demographics' 
+                                component={() => <DemographicConfirm  
+                                                    confirmDemographics={this.confirmDemographics} 
+                                                    user={this.props.user} 
+                                                />} 
+                                />
+                            <Route 
+                                path='/appointments/location' 
+                                component={()=> <LocationForm 
+                                                    setLocation={this.setLocation} 
+                                                    city={this.props.user.city} 
+                                                    state={this.props.user.state} 
+                                                />} 
+                                />
+                            <Route 
+                                path='/appointments/provider' 
+                                component={() => <ProviderSelect 
+                                    setProvider={this.setProvider}
+                                    providers={this.props.providers}
+                                    clinics={this.props.clinics}
+                                    />}
+                                />
+                            
                         </Switch>
                     </HashRouter>
                     

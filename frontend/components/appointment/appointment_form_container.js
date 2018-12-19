@@ -7,7 +7,8 @@ import AppointmentForm from './appointment_form'
 
 const mapStateToProps = (state) => ({
   user: state.entities.user,
-  providers: state.entities.providers
+  providers: state.entities.providers,
+  clinics: state.entities.clinics
 })
 
 const mapDispatchToProps = () => dispatch => ({
