@@ -12,7 +12,7 @@ const LocationForm = ({city, state, setLocation}) => {
                 <div>
                     {state} {city}
                 </div>
-                <MovementButtons back='/appointments/demographics' forward={setLocation({city})} /> 
+                <MovementButtons back='/appointments/demographics' forward={setLocation(city)} /> 
             </div>
         </div>
     )

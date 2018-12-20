@@ -38,3 +38,23 @@ export const getMonth = (monthIndex) => {
     month[11] = 'December';
     return month[monthIndex]
 }
+
+
+export const parseTimeFromJson = (jsonDateTime) => {
+    let dateTime = jsonToDate(jsonDateTime)
+    let hours = dateTime.getHours()
+    let minute = dateTime.getMinutes()
+    let meridian
+    if ( hours >= 12 ) {
+        hours -= 12
+        meridian = 'PM'
+    } else {
+        meridian = 'AM'
+    }
+
+    if (minute < 10) {
+        minute = `0${minute}`
+    }
+
+    return `${hours}:${minute} ${meridian}`
+}

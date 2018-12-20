@@ -1,7 +1,7 @@
 import { RECEIVE_SLOTS } from '../actions/slot_actions'
 
 
-const slotsReducer = (state=[], action) => {
+const slotsReducer = (state={}, action) => {
     Object.freeze(state)
 
     switch (action.type) {

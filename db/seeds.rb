@@ -143,7 +143,7 @@ Shift.delete_all
 aubre_monday = Shift.create(
     clinic_id: clinic.id,
     provider_id: aubre.id, 
-    start: DateTime.new(next_monday.year, next_monday.month, next_monday.day, 8, 30),
+    start: DateTime.new(next_monday.year, next_monday.month, next_monday.day, 13, 00),
     end: DateTime.new(next_monday.year, next_monday.month, next_monday.day, 16, 0)
     )
 
@@ -151,25 +151,25 @@ aubre_monday = Shift.create(
 aubre_tuesday = Shift.create(
     clinic_id: clinic.id,
     provider_id: aubre.id, 
-    start: DateTime.new(next_tuesday.year, next_tuesday.month, next_tuesday.day, 8, 30),
+    start: DateTime.new(next_tuesday.year, next_tuesday.month, next_tuesday.day, 13, 00),
     end: DateTime.new(next_tuesday.year, next_tuesday.month, next_tuesday.day, 16, 0)
     )
 aubre_wednesday = Shift.create(
     clinic_id: clinic.id,
     provider_id: aubre.id, 
-    start: DateTime.new(next_wednesday.year, next_wednesday.month, next_wednesday.day, 8, 30),
+    start: DateTime.new(next_wednesday.year, next_wednesday.month, next_wednesday.day, 13, 00),
     end: DateTime.new(next_wednesday.year, next_wednesday.month, next_wednesday.day, 16, 0)
     )
 aubre_thursday = Shift.create(
     clinic_id: clinic.id,
     provider_id: aubre.id, 
-    start: DateTime.new(next_thursday.year, next_thursday.month, next_thursday.day, 8, 30),
+    start: DateTime.new(next_thursday.year, next_thursday.month, next_thursday.day, 13, 00),
     end: DateTime.new(next_thursday.year, next_thursday.month, next_thursday.day, 16, 0)
     )
 aubre_friday = Shift.create(
     clinic_id: clinic.id,
     provider_id: aubre.id, 
-    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 8, 30),
+    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 13, 0),
     end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 16, 0)
     )
 

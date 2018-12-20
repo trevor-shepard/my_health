@@ -17,7 +17,7 @@ const AppointmentItem = ({ appointment, provider }) => {
 
     
     return (
-        <div className='appointment-list-item blue-hover'>
+        <div key={appointment.id} className='appointment-list-item blue-hover'>
             <div> {reason} with {provider.fname} {provider.lname}, </div>
             <div>{provider.degree}</div>
             <div>{getWeekday(date.getDay().toString())} {getMonth(date.getMonth())} {date.getDate()}, {date.getFullYear()}</div>

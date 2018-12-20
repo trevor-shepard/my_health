@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :appointments, only: [:create, :destory, :update, :show, :index]
     resources :providers, only: [:index, :show]
     resources :clinics, only: [:index]
-    resources :shifts, only: [:show]
+    resources :shifts, only: [:show, :index]
   end
 
   root "static_pages#root"

@@ -67,5 +67,16 @@ class Shift < ApplicationRecord
     end
 
 
+
+    def self.find_shifts_between_range(provider_id, start_date, end_date)
+        shifts = Shift.where(provider_id: provider_id)
+        sorted = shifts.order(:start)
+        
+        between = sorted.select{ |shift| (shift.start <= end_date) && (shift.start >= start_date) }
+
+
+        between
+
+    end
     
 end

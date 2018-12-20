@@ -131,7 +131,34 @@
     font-size: 1.1rem;
 }
 
+
+.time-select-contents {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+.time-select-item {
+    height: 101px;
+    width: 280px;
+    padding: 8.6667px;
+    border: 1px solid #e0e0e0;
+    margin: 4.3333px;
+    margin-left: 0;
+}
+
+
+
 .selected-bar {
     border-left: 5px solid #003073;
 
+}
+
+.load-times-button {
+    width: 105px;
+    height: 33.82px;
+}
+.no-times-button {
+    width: 125px;
+    height: 33.82px;
 }
