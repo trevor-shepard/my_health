@@ -1,1 +1,5 @@
-json.extract! @shift, :clinic_id, :provider_id, :start, :end
+
+json.array! @slots do |slot|
+    json.start slot[:start]
+    json.end slot[:end]
+end

@@ -3,13 +3,23 @@ class Api::ShiftsController < ApplicationController
 
     end
 
-    # shows next available shift
+    # shows next available shift takes :id(provider), :start(date), :end(:date)
     def show
-        start_date = DateTime.new(params[:start])
-        end_date = DateTime.new(params[:end])
+        start_date = DateTime.parse(params[:start])
+        end_date = DateTime.parse(params[:end])
+
+        
+
         @shift = Shift.find_next_available(params[:id], start_date, end_date)
-        render :json, ['this provider has no available appointments during this time'], status: 400 unless @shift
-        @slots = @shift.available_timeblocks
+
+        if @shift
+            @slots = @shift.available_timeblocks
+        else
+            render json: ['this provider has no available appointments during this time'], status: 400 
+        end
+        
     end
     
 end
+
+

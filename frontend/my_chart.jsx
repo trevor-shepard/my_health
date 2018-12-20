@@ -5,7 +5,7 @@ import App from './components/App'
 import { logout, signup } from './actions/session_actions'
 import { fetchAppointment, fetchAppointments, updateAppointment, createAppointment } from  './actions/appointment_actions'
 import { jsonToDate } from './util/date'
-
+import { fetchSlots } from './actions/slot_actions'
 
 
 
@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateAppointments = updateAppointment
   window.createAppointment = createAppointment
   window.jsonToDate = jsonToDate
+  window.fetchSlots = fetchSlots
   
   const root = document.getElementById('root')
 

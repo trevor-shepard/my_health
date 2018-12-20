@@ -82,6 +82,7 @@ class AppointmentForm extends Component {
                 {startDate: start, endDate: end},
                 () => {
                     this.props.clearAppointmentErrors()
+                    
                     this.props.history.push('/appointments/time')
                 }
             )
