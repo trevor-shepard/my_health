@@ -40,6 +40,18 @@ export const getMonth = (monthIndex) => {
 }
 
 
+
+export const parseDatefromJSDateTime = (JSDateTime) => {
+    let string = JSDateTime.toString()
+    let array = string.split(' ')
+    let month = array[0]
+    let day = array[1]
+    let year = array[2]
+    let formatted = `${month} ${day} ${year}`
+    return formatted
+}
+
+
 export const parseTimeFromJson = (jsonDateTime) => {
     let dateTime = jsonToDate(jsonDateTime)
     let hours = dateTime.getHours()

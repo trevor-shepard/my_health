@@ -9,8 +9,11 @@ class Api::AppointmentsController < ApplicationController
     end
 
     def create
+        debugger
+        x=1
+        x=2
         @appointment = Appointment.create(appointment_params)
-
+        debugger
         if @appointment
             render :show
         else

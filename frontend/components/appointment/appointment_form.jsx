@@ -7,6 +7,7 @@ import LocationForm from './location'
 import ProviderSelect from './provider_select'
 import DateSelect from './date_select'
 import TimeSelectContainer from './time_select_container'
+import AppointmentConfirm from './appointment_confirm'
 
 class AppointmentForm extends Component {
     constructor(props) {
@@ -115,8 +116,8 @@ class AppointmentForm extends Component {
                                 component={() => <DemographicConfirm  
                                     confirmDemographics={this.confirmDemographics} 
                                     user={this.props.user} 
-                            />} 
-                        />
+                                />} 
+                            />
                             <Route 
                                 path='/appointments/location' 
                                 component={()=> <LocationForm 
@@ -124,30 +125,44 @@ class AppointmentForm extends Component {
                                     city={this.props.user.city} 
                                     state={this.props.user.state} 
                                 />} 
-                        />
+                            />
                             <Route 
                                 path='/appointments/provider' 
                                 component={() => <ProviderSelect 
                                     setProvider={this.setProvider}
                                     providers={this.props.providers}
                                     clinics={this.props.clinics}
-                            />}
-                        />
+                                />}
+                            />
                             <Route
                                 path='/appointments/date'
                                 component={()=> <DateSelect 
-                                setDate={this.setDate}
-                            />}
-                        />
+                                    setDate={this.setDate}
+                                />}
+                            />
                             <Route
                                 path='/appointments/time'
                                 component={()=> <TimeSelectContainer 
-                                setTime={this.setTime}
-                                provider={this.props.providers[this.state.provider_id]}
-                                start={this.state.startDate}
-                                end={this.state.endDate}
-                            />}
-                        />
+                                    setTime={this.setTime}
+                                    provider={this.props.providers[this.state.provider_id]}
+                                    start={this.state.startDate}
+                                    end={this.state.endDate}
+                                />}
+                            
+                            />
+                            <Route 
+                                path='/appointments/confirm'
+                                component={()=> <AppointmentConfirm 
+                                    user_id={this.props.user.id}
+                                    provider={this.props.providers[this.state.provider_id]}
+                                    clinic={this.props.clinics[this.props.providers[this.state.provider_id].primary_clinic_id]} 
+                                    start={this.state.start}
+                                    end={this.state.end}
+                                    reason={this.state.reason}
+                                    createAppointment={this.props.createAppointment}
+                                />}
+                            />
+
                         </Switch>
                     </HashRouter>
                     
