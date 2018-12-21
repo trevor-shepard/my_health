@@ -67,6 +67,8 @@
     margin-bottom: 10px;
 }
 
+// demographic page
+
 .demographic-content {
     display: flex;
     flex-wrap: wrap;
@@ -114,6 +116,9 @@
     color: white;
     background-color: #FFC16E;
 }
+
+
+
 
 .unselected  {
     background: #DBDBDB;
@@ -205,4 +210,71 @@
 .second-header {
     font-size: 1.2rem;
     font-weight: bold;
+    color: #003073;
+}
+
+
+
+// date select
+.date-select {
+    height: 34x;
+    width: 150px;
+    border: 1px solid #aaa;
+    margin: 10px;
+}
+
+//confirm
+
+.appointment-confirm-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.display-titles {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #aaa;
+    
+}
+
+.appointment-confirm-display-title {
+    font-size: 1.2rem;
+    width: 100%;
+    height: auto;
+}
+
+.appointment-confirm-details {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.margin-ten-top-bottom {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.appointment-confirm-details-item {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1rem;
+    padding: 15px;
+}
+
+.appointment-confirm-details-item * {
+    padding: 5px;
+}
+
+.appointment-confirm-details-item i {
+    font-size: 40px;
+}
+
+.appointment-confirm-input {
+    width: 90%;
+    height: 70px;
+    border: 1px solid #aaa;
 }

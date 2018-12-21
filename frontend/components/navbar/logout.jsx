@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 
 
 const Logout = ({user, logout}) => (
-    <div>
-        <div className="logout-button" onClick={logout}>
-            <span className="account-name">{user.fname} {user.lname}</span>
-        </div>
+    
+    <div className="logout-button" onClick={logout}>
+        <div className="account-name">{user.fname} {user.lname}</div>
+        <div>logout</div>
     </div>
+    
 )
 
 export default Logout
