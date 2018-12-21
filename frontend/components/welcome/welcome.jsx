@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import AppointmentItem from './appointment_item'
 import { Link } from 'react-router-dom'
+import caleandar from '../../util/caleandar'
+import { jsonToDateOnly, parseTimeFromJson } from '../../util/date'
 
 class Welcome extends Component {
     constructor(props){
@@ -10,7 +12,63 @@ class Welcome extends Component {
     componentDidMount(){
         this.props.fetchAppointments()
         this.props.fetchProviders()
+        
+
+        
+        
+        
     }
+    
+    componentDidUpdate(oldProps) {
+        
+
+        if ((Object.values(this.props.appointments).length && Object.values(this.props.providers).length)) {
+
+            let provider
+
+            let element = document.getElementById('caleandar')
+            element.innerHTML = ""
+    
+            let appointments = Object.values(this.props.appointments)
+            let events = appointments.map((el) => {
+                
+                provider = this.props.providers[el.provider_id]
+                
+                return {
+                    'Date': jsonToDateOnly(el.start),
+                    'Title': `Appointment with ${provider.fname} ${provider.lname} at ${parseTimeFromJson(el.start)}`
+                }
+            })
+
+            // let events = [
+            //     {'Date': new Date(2018, 11, 1), 'Title': 'Doctor appointment at 3:25pm.'},
+            //     {'Date': new Date(2018, 11, 7), 'Title': 'New Garfield movie comes out!', 'Link': 'https://garfield.com'},
+            //     {'Date': new Date(2018, 11, 11), 'Title': '25 year anniversary', 'Link': 'https://www.google.com.au/#q=anniversary+gifts'},
+            //   ];
+    
+            let settings = {
+                Color: '',
+                LinkColor: '',
+                NavShow: true,
+                NavVertical: false,
+                NavLocation: '',
+                DateTimeShow: true,
+                DateTimeFormat: 'mmm, yyyy',
+                DatetimeLocation: '',                                                   
+                EventClick: '',
+                EventTargetWholeDay: false,
+                DisabledDays: [],
+
+            }
+            
+            caleandar(element, events, settings)
+        }
+    }
+    
+    
+
+
+
 
     render() {
 
@@ -18,6 +76,10 @@ class Welcome extends Component {
         if (Object.values(this.props.appointments).length && Object.values(this.props.providers).length) {
             appointments = Object.values(this.props.appointments).map((appointment) => <AppointmentItem key={appointment.id} appointment={appointment} provider={this.props.providers[appointment.provider_id]} />)
         }
+
+        
+
+
         return (
             <div className='content-container'>
                 <div className='content'>
@@ -28,7 +90,9 @@ class Welcome extends Component {
                             {appointments}
                         </div>
                         <div className="appointment-calender-container">
-                            i'm a calender
+                            <div id="caleandar">
+
+                            </div>
                         </div>
                     </div>
                 </div>

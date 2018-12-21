@@ -9,6 +9,16 @@ export const jsonToDate = (jsonDate) => {
     let minute = time[1]
     return new Date(year, month, day, hour, minute)
 }
+export const jsonToDateOnly = (jsonDate) => {
+    let dateTime = jsonDate.split('T')
+    let date = dateTime[0].split("-")
+    let time = dateTime[1].split(':')
+    let year = date[0]
+    let month = parseInt(date[1]) - 1
+    let day = date[2]
+
+    return new Date(year, month, day)
+}
 
 export const getWeekday = (dayIndex) => {
     let weekday = new Array(7);
