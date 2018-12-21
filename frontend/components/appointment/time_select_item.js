@@ -4,7 +4,7 @@ import {parseTimeFromJson} from '../../util/date'
 const TimeSelectItem = ({time, provider, clinic, selectTime}) => {
     
     return(
-        <div id={`time-select-${time}`} className='time-select-item' onClick={selectTime}>
+        <div id={`time-select-${time}`} className='time-select-item blue-hover' onClick={selectTime}>
             <div>
                 {parseTimeFromJson(time)}
             </div>

@@ -12,25 +12,40 @@
 .welcome-appointment-content {
     border: 1px solid #E0E0E0;
     display: flex;
-    overflow: scroll;
+
 }
 
 .welcome-message {
     font-size: 2rem;
     color: #003073;
+    margin: 20px;
+}
+
+.second-welcome-message {
+    margin-left: 20px;
+}
+
+.nav-welcome-message {
+    margin-left: 77px;
 }
 
 .appointment-list {
-    width: 567.09px;
-    margin: 0;
+    width: 553.09px;
+    height: 500px;
+    margin: 5px;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    
 }
 .appointment-list-item {
-    width: 100%;
+    width: 90%;
     height: 102px;
     margin: 2px;
+    padding: 20px;
 }
 
-
+second-welcome-message
 
 
 // sidebar
@@ -62,3 +77,13 @@
 }
 
 
+.appointment-calender-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#caleandar {
+    margin: 32px;
+    margin-top: -127px;
+}

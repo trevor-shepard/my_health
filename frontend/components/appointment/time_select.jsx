@@ -99,20 +99,20 @@ class TimeSelect extends Component {
         return(
             <div>
                 <h1 className='two-rem'>Schedule an Appointment</h1>
-                <div>
+                <div className='time-select-description'>
                 This page displays available appointment times for the selected provider. Select an appointment time by clicking on the appointment.
 
 If you would like to see more appointment times, click Later Times. Click Back to change the search criteria.
 
 Arrival times vary by clinic but in general plan on arriving at least 15 minutes before your appointment start time. Arriving early allows your care team time to prepare you for your visit. Be sure to follow any instructions provided by your clinic.
                 </div>
-                <div> {date} </div>
+                <div className='second-header'> {date} </div>
 
                 <div className='time-select-contents'>
                     {slots}
                 </div>
                 {error}
-                <div>
+                <div className='more-buttons'>
                     {more_days}
                     {no_more}
                 </div>

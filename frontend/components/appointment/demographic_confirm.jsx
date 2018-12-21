@@ -34,7 +34,7 @@ class DemographicConfirm extends Component {
 
         return (
             <div>
-                <h1 className="two-rem">Schedule an Appointment</h1>
+                <h1 className="two-rem reduce-lower-margin">Schedule an Appointment</h1>
                 <div className='demographic-content'>
                     <div className='demographic-item'>
                         <div className='demographic-item-title'>Street Address:</div>

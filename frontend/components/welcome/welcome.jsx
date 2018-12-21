@@ -21,7 +21,7 @@ class Welcome extends Component {
     
     componentDidUpdate(oldProps) {
         
-
+        // Calender sourced from https://github.com/jackducasse/caleandar 
         if ((Object.values(this.props.appointments).length && Object.values(this.props.providers).length)) {
 
             let provider
@@ -39,12 +39,6 @@ class Welcome extends Component {
                     'Title': `Appointment with ${provider.fname} ${provider.lname} at ${parseTimeFromJson(el.start)}`
                 }
             })
-
-            // let events = [
-            //     {'Date': new Date(2018, 11, 1), 'Title': 'Doctor appointment at 3:25pm.'},
-            //     {'Date': new Date(2018, 11, 7), 'Title': 'New Garfield movie comes out!', 'Link': 'https://garfield.com'},
-            //     {'Date': new Date(2018, 11, 11), 'Title': '25 year anniversary', 'Link': 'https://www.google.com.au/#q=anniversary+gifts'},
-            //   ];
     
             let settings = {
                 Color: '',
@@ -84,7 +78,7 @@ class Welcome extends Component {
             <div className='content-container'>
                 <div className='content'>
                     <h1 className='welcome-message'>Welcome!</h1>
-                    <h3>Upcoming Appointments</h3>
+                    <h3 className='second-welcome-message' >Upcoming Appointments</h3>
                     <div className='welcome-appointment-content'>
                         <div className='appointment-list'>
                             {appointments}
@@ -97,7 +91,7 @@ class Welcome extends Component {
                     </div>
                 </div>
                 <div className="sidebar">
-                    <h1>Quick Links</h1>
+                    <h3 className='nav-welcome-message' >Quick Links</h3>
                     <Link to='/' >
                         <div className='sidebar-item blue-hover'>
                             <i className="fas fa-poll-h welcome-sidebar-icon"></i>

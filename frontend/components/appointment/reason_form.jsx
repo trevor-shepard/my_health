@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const ReasonForm = ({ setReason }) => {
     
     return (
-        <div >
+        <div className='reason-content' >
             <div className='margin-twenty-one'>Choose your reason for scheduling an appointment from the options below.</div>
             <div className='reason-list'>
                 <div className="blue-hover reason-item" onClick={ setReason('new_problem') } >
@@ -22,9 +22,9 @@ const ReasonForm = ({ setReason }) => {
                     <h1>Well Child Check</h1>
                     <div>A routine Well Child visit.</div>
                 </div>
-                <div>
-                    <Link to="/">BACK TO THE HOME PAGE</Link>
-                </div>
+            </div>
+            <div className='home-button-container'>
+                <Link to="/" className='m-button home-button' >BACK TO THE HOME PAGE</Link>
             </div>
         </div>
     )
