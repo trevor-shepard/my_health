@@ -44,7 +44,6 @@ class ProviderSelect extends React.Component{
                 
             }
         }
-        
         let provider_shows = Object.values(this.props.providers).map((provider) => <ProviderSelectItem 
                                                                     provider={provider}
                                                                     selectProvider={this.selectProvider(provider.id)} 

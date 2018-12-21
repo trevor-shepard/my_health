@@ -20,7 +20,7 @@ last_friday = last_thursday.tomorrow
 
 
 
-User.delete_all
+User.destroy_all
 
 # users
 tori = User.create(
@@ -72,7 +72,7 @@ trevor = User.create(
     )
 
 #clinics
-Clinic.delete_all
+Clinic.destroy_all
 
 plazaPMG = Clinic.create(
     name: "Providence Medical Group-The Plaza", 
@@ -111,7 +111,7 @@ clinic = Clinic.create(
 )
     
 #providers
-Provider.delete_all
+Provider.destroy_all
 
 cate = Provider.create(
     lname: "Flannigan", 
@@ -138,7 +138,7 @@ aubre = Provider.create(
 
 
 #shifts
-Shift.delete_all
+Shift.destroy_all
 
 aubre_monday = Shift.create(
     clinic_id: clinic.id,
@@ -173,15 +173,21 @@ aubre_friday = Shift.create(
     end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 16, 0)
     )
 
+aaron_shift = Shift.create(
+    clinic_id: legacyClinic.id,
+    provider_id: aaron.id, 
+    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 12, 30),
+    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 16, 50),
+)
 
 #appointment
 
-Appointment.delete_all
+Appointment.destroy_all
 
 
 
 
-trevor_followup1 = Appointment.create(
+trevor_followup_with_aubre_1 = Appointment.create(
     user_id: trevor.id,
     provider_id: aubre.id,
     start: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 30),
@@ -190,7 +196,7 @@ trevor_followup1 = Appointment.create(
     notes: 'poisin oak rash'
 )
 
-trevor_followup3 = Appointment.create(
+trevor_followup_with_aubre_3 = Appointment.create(
     user_id: trevor.id,
     provider_id: aubre.id,
     start: DateTime.new(last_friday.year, last_friday.month, last_friday.day, 13, 30),
@@ -198,7 +204,7 @@ end: DateTime.new(last_friday.year, last_friday.month, last_friday.day, 13, 50),
 reason: 'new_problem',
 notes: 'cotards delustion outbreak'
 )
-trevor_followup4 = Appointment.create(
+trevor_followup_with_aubre_4 = Appointment.create(
     user_id: trevor.id,
     provider_id: aubre.id,
     start: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 30),
@@ -217,7 +223,7 @@ notes: 'clinomania'
 )
 
 
-trevor_followup2 = Appointment.create(
+trevor_followup_with_aubre_2 = Appointment.create(
     user_id: User.last.id,
     provider_id: Provider.last.id,
     start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 13, 30),
@@ -225,4 +231,15 @@ trevor_followup2 = Appointment.create(
     reason: 'new_problem',
     notes: 'future appointment'
 )
+
+trevor_session_with_Cal = Appointment.create(
+    user_id: trevor.id,
+    provider_id: aaron.id,
+    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 15, 30),
+    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 15, 50),
+    reason: 'new_problem',
+    notes: 'Nevermind'
+)
+
+
 
