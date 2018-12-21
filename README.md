@@ -1,7 +1,9 @@
-# README
+# MyHealth
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![alt text](https://github.com/trevor-shepard/my_health/blob/master/app/assets/images/MyHealth_Logo-01.png "Logo Title Text 1")
+
+
+Web application for  patients to manage healthcare appointments and to interact with thier providers
 
 Things you may want to cover:
 
