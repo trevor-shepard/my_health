@@ -72,7 +72,7 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  min-height: 671px;
+  min-height: 655px;
   width: 960.69px;
 }
 
@@ -93,6 +93,9 @@
 }
 
 body {
-  font-family: Source Sans Pro, Calibri, Arial, sans-serif
+  font-family: Source Sans Pro, Calibri, Arial, sans-serif;
 }
 
+html {
+  background-color: #0B4385;
+}
