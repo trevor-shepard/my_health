@@ -11,4 +11,6 @@
 
 class Medication < ApplicationRecord
     validates :generic_name, presence: true
+
+    has_many :prescriptions
 end

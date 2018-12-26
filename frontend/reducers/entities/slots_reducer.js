@@ -1,4 +1,4 @@
-import { RECEIVE_SLOTS } from '../actions/slot_actions'
+import { RECEIVE_SLOTS } from '../../actions/slot_actions'
 
 
 const slotsReducer = (state={}, action) => {

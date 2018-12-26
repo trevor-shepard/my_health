@@ -35,6 +35,8 @@ class User < ApplicationRecord
     has_many :appointments
     has_many :providers, through: :appointments
     has_many :clinics, through: :providers
+    has_many :prescriptions
+    has_many :medications, through: :prescriptions
 
     after_initialize :ensure_token
 

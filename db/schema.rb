@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_24_223922) do
+ActiveRecord::Schema.define(version: 2018_12_25_010448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,9 @@ ActiveRecord::Schema.define(version: 2018_12_24_223922) do
     t.integer "refills", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "dosage"
+    t.string "admin_type"
+    t.boolean "request_pending", null: false
     t.index ["medication_id"], name: "index_prescriptions_on_medication_id"
     t.index ["provider_id"], name: "index_prescriptions_on_provider_id"
     t.index ["user_id"], name: "index_prescriptions_on_user_id"

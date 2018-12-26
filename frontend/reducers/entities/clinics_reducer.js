@@ -1,4 +1,4 @@
-import { RECEIVE_CLINICS } from '../actions/clinic_actions'
+import { RECEIVE_CLINICS } from '../../actions/clinic_actions'
 
 
 const clinicsReducer = (state= {}, action) => {

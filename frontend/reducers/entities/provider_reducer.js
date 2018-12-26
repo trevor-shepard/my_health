@@ -1,7 +1,7 @@
 import {
     RECEIVE_PROVIDER,
     RECEIVE_PROVIDERS,
-} from '../actions/provider_actions'
+} from '../../actions/provider_actions'
 
 const providerReducer = (state={}, action) => {
     Object.freeze(state)

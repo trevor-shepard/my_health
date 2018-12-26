@@ -6,7 +6,8 @@ import { logout, signup } from './actions/session_actions'
 import { fetchAppointment, fetchAppointments, updateAppointment, createAppointment } from  './actions/appointment_actions'
 import { jsonToDate } from './util/date'
 import { fetchSlots } from './actions/slot_actions'
-
+import { fetchPrescriptions, requestRefill } from './actions/prescription_actions'
+import { fetchMedications } from './actions/medications_actions'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,7 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createAppointment = createAppointment
   window.jsonToDate = jsonToDate
   window.fetchSlots = fetchSlots
-  
+  window.fetchPrescriptions = fetchPrescriptions
+  window.requestRefill = requestRefill
+  window.fetchMedications = fetchMedications
+
   const root = document.getElementById('root')
 
   

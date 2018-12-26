@@ -1,0 +1,91 @@
+// Place all the styles related to the Api::Prescriptions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.prescription-index-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E0E0E0;
+}
+
+.rx-title {
+    height: 37px;
+    background-color: #F3F4F8;
+    display: flex
+}
+
+.rx-title-text {
+    margin: 8px;
+}
+
+.rx-index-item-content{
+    display: flex;
+    height: 90px
+}
+
+.checkbox-container {
+    width: 35px
+}
+
+.checkbox-container input {
+    margin: 8px;
+    margin-top: 27px;
+}
+
+.rx-index-item-content-display > div {
+    margin: 10px;
+}
+
+.rx-name {
+    font-weight: bold;
+    font-size: 17px;
+    margin: 3px;
+}
+
+.rx-brand-name {
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+    margin: 12px;
+
+}
+
+.rx-approved-by {
+    color: #606060;
+    font-size: 0.8em;
+    line-height: 1em;
+}
+
+.square-red {
+    border-color: #CC3443 transparent transparent;
+    border-style: solid solid none none;
+    border-width: 0.5rem 0.5rem 0 0;
+    content: "";
+    display: inline-block;
+    height: 0;
+    margin: 0 0.125rem 0 0;
+    vertical-align: top;
+    width: 0;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.margin-left-five-c * {
+    margin-left: 5px;
+}
+
+.bottom-zero {
+    margin-bottom: 0;
+}
+
+.cancel-button {
+    color: white;
+    background-color: #FFC16E;
+    height: 35px;
+    width: 90px;
+    text-align: center;
+    padding-top: 3  px;
+    border: 1px solid grey;
+    font-weight: bold;
+    font-size: 14px;
+}

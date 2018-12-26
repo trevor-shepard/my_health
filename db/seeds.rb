@@ -238,8 +238,60 @@ trevor_session_with_Cal = Appointment.create(
     start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 15, 30),
     end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 15, 50),
     reason: 'new_problem',
-    notes: 'Nevermind'
+    notes: 'counciling'
+)
+
+Medication.destroy_all
+
+hydrocortone = Medication.create(
+    generic_name: 'Hydrocortisone',
+    brand_name: 'Hydrocortone'
+)
+
+focalin = Medication.create(
+    brand_name: 'Focalin',
+    generic_name: 'Dexmethylphenidate'
+)
+
+lasix = Medication.create(
+    generic_name: 'Furosemide',
+    brand_name: 'Lasix'
+)
+
+Prescription.destroy_all
+
+trevor_hyrdocortone = Prescription.create(
+    medication_id: hydrocortone.id,
+    provider_id: aubre.id,
+    user_id: trevor.id,
+    refills: 1,
+    count: 20,
+    dosage: '10mg',
+    admin_type: 'oral',
+    request_pending: false
 )
 
 
+trevor_lasix = Prescription.create(
+    medication_id: lasix.id,
+    provider_id: aubre.id,
+    user_id: trevor.id,
+    refills: 6,
+    count: 30,
+    dosage: '5mg',
+    admin_type: 'oral',
+    request_pending: false
 
+)
+
+treovor_focalin = Prescription.create(
+    medication_id: focalin.id,
+    provider_id: aubre.id,
+    user_id: trevor.id,
+    refills: 6,
+    count: 30,
+    dosage: '10mg',
+    admin_type: 'oral',
+    request_pending: false
+
+)

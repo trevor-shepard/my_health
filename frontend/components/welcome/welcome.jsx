@@ -111,7 +111,7 @@ class Welcome extends Component {
                             <div>Schedule an appointment</div>
                         </div>
                     </Link>
-                    <Link to='/' >
+                    <Link to='/prescriptions' >
                         <div className='sidebar-item blue-hover'>
                             <i className="fas fa-pills welcome-sidebar-icon"></i>
                             <div>Refill medications</div>

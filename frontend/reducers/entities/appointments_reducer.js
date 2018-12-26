@@ -2,7 +2,7 @@ import {
     RECEIVE_APPPOINTMENT,
     RECEIVE_APPPOINTMENTS,
     REMOVE_APPOINTMENT
-} from '../actions/appointment_actions'
+} from '../../actions/appointment_actions'
 
 
 const appointmentReducer = (state={}, action) => {
