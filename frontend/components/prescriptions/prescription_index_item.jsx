@@ -1,7 +1,7 @@
 import React from 'react'
 import {jsonToDate, parseDatefromJSDateTime} from '../../util/date'
 
-const PrescriptionIndexItem = ({med, provider, Rx, selectRx }) => {
+const PrescriptionIndexItem = ({med, provider, Rx, selectRx, selectedID }) => {
 
     let prescribed_on = parseDatefromJSDateTime(jsonToDate(Rx.created_at)) 
     
@@ -15,7 +15,7 @@ const PrescriptionIndexItem = ({med, provider, Rx, selectRx }) => {
             <div className='rx-index-item-content'>
                 <div className='checkbox-container'>
                     <label>
-                        <input type='checkbox' onClick={selectRx} />
+                        <input type='checkbox' onClick={selectRx} checked={selectedID === Rx.id ? true : false} />
                     </label>
                    
                 </div>

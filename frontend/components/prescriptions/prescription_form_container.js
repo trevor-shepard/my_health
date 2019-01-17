@@ -1,6 +1,6 @@
 import {connect } from 'react-redux'
 import { fetchMedications } from '../../actions/medications_actions'
-import { fetchPrescriptions } from '../../actions/prescription_actions'
+import { fetchPrescriptions, requestRefill } from '../../actions/prescription_actions'
 import PrescriptionForm from './prescription_form'
 
 const mapStateToProps = (state) => ({

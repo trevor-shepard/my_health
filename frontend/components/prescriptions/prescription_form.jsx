@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import PrescriptionIndexItem  from './prescription_index_item'
-import { format } from 'util';
+import React, { Component } from 'react';
+import { Switch, HashRouter, Link } from 'react-router-dom';
+import { ProtectedRoute } from '../../util/route_util';
+import PrescriptionIndex from './prescription_index'
+import PrescriptionsConfirm from './prescriptions_confirm'
 
-
-class PrescriptionIndex extends Component {
+class PrescriptionForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -27,7 +28,6 @@ class PrescriptionIndex extends Component {
     }
 
     selectRx(rxID) {
-        
         return (e) => {
             e.preventDefault
             this.setState({rxID: rxID})
@@ -42,25 +42,12 @@ class PrescriptionIndex extends Component {
     
     render() {
 
-        let prescriptions
-        if (this.state.loaded) {
-            
-            prescriptions = Object.values(this.props.prescriptions).map(
-                (el) => (
-                    <PrescriptionIndexItem 
-                    med={this.props.medications[el.medication_id]}
-                    provider={this.props.providers[el.provider_id]}
-                    Rx={el}
-                    selectRx={this.selectRx(el.id)}
-                    />
-                )
-            )
-            
-        }
-
         let continue_button
-        if (this.state.rxID) {
-            continue_button = <button className='m-button'>CONTINUE</button>
+        
+        if (this.state.confirm) {
+            continue_button = <button className='m-button'>CONFIRM</button>
+        } if (this.state.rxID) {
+            continue_button = <Link to="/prescriptions/confirm" className='m-button'>CONTINUE</Link>
         } else {
             continue_button = <button className='m-button disabled'>CONTINUE</button>
         }
@@ -69,23 +56,29 @@ class PrescriptionIndex extends Component {
         return(
             <div className='content-container'>
                 <div className='content'>
-                    <h1 className='two-rem'>Request Rx Refill</h1>
+                    <HashRouter>
+                        <Switch>
+                            <ProtectedRoute exact path='/prescriptions/confirm' component={() =>(
+                                <PrescriptionsConfirm 
+                                    rx={this.props.prescriptions[this.state.rxID]}
+                                    provider={this.props.providers[this.props.prescriptions[this.state.rxID].provider_id]}
+                                    med={this.props.medications[this.props.prescriptions[this.state.rxID].medication_id]}
+                                />)}
+                            />
+                            <ProtectedRoute path='/prescriptions' component={() =>(
+                                <PrescriptionIndex
+                                    prescriptions={this.props.prescriptions}
+                                    medications={this.props.medications}
+                                    providers={this.props.providers}
+                                    selectRx={this.selectRx}
+                                    selectedID={this.state.rxID}
+                                />)} 
+                            />
+                        </Switch>
+                    </HashRouter>
                     <div>
-                        <div className='margin-twenty bottom-zero'>Step 1 of 2: Choose prescriptions to refill</div>
-                        <form className='rx-list-container margin-twenty'>
-                            
-                            <div className='rx-list'>
-                                {prescriptions}
-                            </div>
-                        </form>
-                        <div>
-                            {continue_button}
-                            <button className="cancel-button">
-                                CANCEL
-                            </button>
-                        </div>
-                    </div>
-                    
+                        {continue_button}
+                    </div>              
                 </div>
                 <div className='sidebar'>
 
@@ -95,4 +88,4 @@ class PrescriptionIndex extends Component {
     }
 }
 
-export default PrescriptionIndex
+export default PrescriptionForm

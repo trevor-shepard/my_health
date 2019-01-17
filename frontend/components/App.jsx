@@ -1,13 +1,13 @@
 import React from 'react';
-import { Switch, HashRouter } from 'react-router-dom'
-import { AuthRoute, ProtectedRoute } from '../util/route_util'
+import { Switch, HashRouter } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Provider } from 'react-redux';
 
-import Splash from './session_form/splash'
-import WelcomeContainer from './welcome/welcome_container'
-import NavBarContainer from './navbar/navbar_container'
-import AppointmentFormContainer from './appointment/appointment_form_container'
-import PrescriptionFormContainer from './prescriptions/prescription_form_container'
+import Splash from './session_form/splash';
+import WelcomeContainer from './welcome/welcome_container';
+import NavBarContainer from './navbar/navbar_container';
+import AppointmentFormContainer from './appointment/appointment_form_container';
+import PrescriptionFormContainer from './prescriptions/prescription_form_container';
 
 
 const App = ({ store }) => (
