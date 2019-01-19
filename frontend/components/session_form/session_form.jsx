@@ -125,7 +125,7 @@ class SessionForm extends Component {
         return (
             <div className='form-container'>
                 <div className="language">
-                    <Link to='/'>Español</Link>
+                    <Link className="espanol" to='/'>Español</Link>
                 </div>
                 <div className="error-container">
                     { error }

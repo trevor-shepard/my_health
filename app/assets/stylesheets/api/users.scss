@@ -25,8 +25,8 @@
 
 // left side
  .splash-pitch-display {
-     min-height: 707px;
-     width: 923px;
+     height: 650px;
+     width: 800px;
      background: white;
      display: flex;
      align-items: center;
@@ -36,7 +36,7 @@
 
 .splash-list-row {
     margin-top: 32px;
-    width: 95%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap; 
 }
@@ -93,7 +93,7 @@
 
 // sidebar
 .splash-sidebar {
-    min-height: 707px;
+    height: 650px;
     width: 310px;
     background-color: #EAF0F6;
 }
@@ -191,4 +191,9 @@
 
 .other {
     margin-top: 10px;
+}
+
+
+.espanol {
+    padding: 7px;
 }

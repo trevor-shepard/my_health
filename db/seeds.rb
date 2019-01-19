@@ -143,55 +143,55 @@ Shift.destroy_all
 aubre_monday = Shift.create(
     clinic_id: clinic.id,
     provider_id: aubre.id, 
-    start: DateTime.new(next_monday.year, next_monday.month, next_monday.day, 13, 00),
-    end: DateTime.new(next_monday.year, next_monday.month, next_monday.day, 16, 0)
+    start: DateTime.new(next_monday.year, next_monday.month, next_monday.day, 13, 00).change(:offset => "-0800"),
+    end: DateTime.new(next_monday.year, next_monday.month, next_monday.day, 16, 0).change(:offset => "-0800")
     )
 
 
 aubre_tuesday = Shift.create(
     clinic_id: clinic.id,
     provider_id: aubre.id, 
-    start: DateTime.new(next_tuesday.year, next_tuesday.month, next_tuesday.day, 13, 00),
-    end: DateTime.new(next_tuesday.year, next_tuesday.month, next_tuesday.day, 16, 0)
+    start: DateTime.new(next_tuesday.year, next_tuesday.month, next_tuesday.day, 13, 00).change(:offset => "-0800"),
+    end: DateTime.new(next_tuesday.year, next_tuesday.month, next_tuesday.day, 16, 0).change(:offset => "-0800")
     )
 aubre_wednesday = Shift.create(
     clinic_id: clinic.id,
     provider_id: aubre.id, 
-    start: DateTime.new(next_wednesday.year, next_wednesday.month, next_wednesday.day, 13, 00),
-    end: DateTime.new(next_wednesday.year, next_wednesday.month, next_wednesday.day, 16, 0)
+    start: DateTime.new(next_wednesday.year, next_wednesday.month, next_wednesday.day, 13, 00).change(:offset => "-0800"),
+    end: DateTime.new(next_wednesday.year, next_wednesday.month, next_wednesday.day, 16, 0).change(:offset => "-0800")
     )
 aubre_thursday = Shift.create(
     clinic_id: clinic.id,
     provider_id: aubre.id, 
-    start: DateTime.new(next_thursday.year, next_thursday.month, next_thursday.day, 13, 00),
-    end: DateTime.new(next_thursday.year, next_thursday.month, next_thursday.day, 16, 0)
+    start: DateTime.new(next_thursday.year, next_thursday.month, next_thursday.day, 13, 00).change(:offset => "-0800"),
+    end: DateTime.new(next_thursday.year, next_thursday.month, next_thursday.day, 16, 0).change(:offset => "-0800")
     )
 aubre_friday = Shift.create(
     clinic_id: clinic.id,
     provider_id: aubre.id, 
-    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 13, 0),
-    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 16, 0)
+    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 13, 0).change(:offset => "-0800"),
+    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 16, 0).change(:offset => "-0800")
     )
 
 aaron_shift = Shift.create(
     clinic_id: legacyClinic.id,
     provider_id: aaron.id, 
-    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 12, 30),
-    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 16, 50),
+    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 12, 30).change(:offset => "-0800"),
+    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 16, 50).change(:offset => "-0800"),
 )
 
 #appointment
 
 Appointment.destroy_all
 
-
+ 
 
 
 trevor_followup_with_aubre_1 = Appointment.create(
     user_id: trevor.id,
     provider_id: aubre.id,
-    start: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 30),
-    end: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 50),
+    start: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 30).change(:offset => "-0800"),
+    end: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 50).change(:offset => "-0800"),
     reason: 'new_problem',
     notes: 'poisin oak rash'
 )
@@ -199,16 +199,16 @@ trevor_followup_with_aubre_1 = Appointment.create(
 trevor_followup_with_aubre_3 = Appointment.create(
     user_id: trevor.id,
     provider_id: aubre.id,
-    start: DateTime.new(last_friday.year, last_friday.month, last_friday.day, 13, 30),
-end: DateTime.new(last_friday.year, last_friday.month, last_friday.day, 13, 50),
-reason: 'new_problem',
-notes: 'cotards delustion outbreak'
+    start: DateTime.new(last_friday.year, last_friday.month, last_friday.day, 13, 30).change(:offset => "-0800"),
+    end: DateTime.new(last_friday.year, last_friday.month, last_friday.day, 13, 50).change(:offset => "-0800"),
+    reason: 'new_problem',
+    notes: 'cotards delustion outbreak'
 )
 trevor_followup_with_aubre_4 = Appointment.create(
     user_id: trevor.id,
     provider_id: aubre.id,
-    start: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 30),
-end: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 50),
+    start: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 30).change(:offset => "-0800"),
+end: DateTime.new(last_wednesday.year, last_wednesday.month, last_wednesday.day, 13, 50).change(:offset => "-0800"),
 reason: 'new_problem',
 notes: 'cotards delustion outbreak'
 )
@@ -216,8 +216,8 @@ notes: 'cotards delustion outbreak'
 tori_followup = Appointment.create(
     user_id: tori.id,
     provider_id: aubre.id,
-    start: DateTime.new(last_tuesday.year, last_tuesday.month, last_tuesday.day, 13, 30),
-end: DateTime.new(last_tuesday.year, last_tuesday.month, last_tuesday.day, 13, 50),
+    start: DateTime.new(last_tuesday.year, last_tuesday.month, last_tuesday.day, 13, 30).change(:offset => "-0800"),
+end: DateTime.new(last_tuesday.year, last_tuesday.month, last_tuesday.day, 13, 50).change(:offset => "-0800"),
 reason: 'new_problem',
 notes: 'clinomania'
 )
@@ -226,8 +226,8 @@ notes: 'clinomania'
 trevor_followup_with_aubre_2 = Appointment.create(
     user_id: User.last.id,
     provider_id: Provider.last.id,
-    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 13, 30),
-    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 13, 50),
+    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 13, 30).change(:offset => "-0800"),
+    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 13, 50).change(:offset => "-0800"),
     reason: 'new_problem',
     notes: 'future appointment'
 )
@@ -235,8 +235,8 @@ trevor_followup_with_aubre_2 = Appointment.create(
 trevor_session_with_Cal = Appointment.create(
     user_id: trevor.id,
     provider_id: aaron.id,
-    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 15, 30),
-    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 15, 50),
+    start: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 15, 30).change(:offset => "-0800"),
+    end: DateTime.new(next_friday.year, next_friday.month, next_friday.day, 15, 50).change(:offset => "-0800"),
     reason: 'new_problem',
     notes: 'counciling'
 )
