@@ -268,7 +268,8 @@ trevor_hyrdocortone = Prescription.create(
     count: 20,
     dosage: '10mg',
     admin_type: 'oral',
-    request_pending: false
+    request_pending: false,
+    pharmacy: "Walgreens at 6116 Ne M L King Blvd Portland, Oregon 97211"
 )
 
 
@@ -280,7 +281,9 @@ trevor_lasix = Prescription.create(
     count: 30,
     dosage: '5mg',
     admin_type: 'oral',
-    request_pending: false
+    request_pending: false,
+    pharmacy: "Walgreens at 6116 Ne M L King Blvd Portland, Oregon 97211"
+    
 
 )
 
@@ -292,6 +295,8 @@ treovor_focalin = Prescription.create(
     count: 30,
     dosage: '10mg',
     admin_type: 'oral',
-    request_pending: false
+    request_pending: false,
+    pharmacy: "Walgreens at 6116 Ne M L King Blvd Portland, Oregon 97211"
+
 
 )
