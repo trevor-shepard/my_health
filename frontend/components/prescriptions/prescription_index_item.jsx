@@ -21,7 +21,7 @@ const PrescriptionIndexItem = ({med, provider, Rx, selectRx, selectedID }) => {
         <div className='prescription-index-item'>
             <div className='rx-title'>
                 <div className='square-red'> </div>
-                <div className='rx-title-text'>Prescription</div>
+                <div className='rx-title-text'>Prescription</div>   
             </div>
             
             <div className='rx-index-item-content'>

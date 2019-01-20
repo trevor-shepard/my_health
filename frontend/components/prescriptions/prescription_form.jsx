@@ -67,7 +67,7 @@ class PrescriptionForm extends Component {
         } else if (this.state.rxID) {
             continue_button = <button onClick={this.handleContinue} className='m-button'>CONTINUE</button>
         } else {
-            continue_button = <div>Please select a medication</div>
+            continue_button = <button className='m-button' >Please select a medication</button>
         }
 
 
@@ -97,7 +97,8 @@ class PrescriptionForm extends Component {
                     </HashRouter>
                     <div>
                         {continue_button}
-                    </div>              
+                        <Link to="/" className='m-button home-button' >BACK TO THE HOME PAGE</Link>
+                    </div>            
                 </div>
                 <div className='sidebar'>
 
