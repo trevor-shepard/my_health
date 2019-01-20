@@ -12,11 +12,6 @@ class Welcome extends Component {
     componentDidMount(){
         this.props.fetchAppointments()
         this.props.fetchProviders()
-        
-
-        
-        
-        
     }
     
     componentDidUpdate(oldProps) {
@@ -59,7 +54,16 @@ class Welcome extends Component {
         }
     }
     
-    
+    showModal() {
+        let modal = document.getElementById("modal")
+        
+        modal.classList.add("coming-soon-show")
+
+        setTimeout(() => {
+            modal.classList.remove("coming-soon-show")
+        },
+        1700)
+    }
 
 
 
@@ -76,6 +80,9 @@ class Welcome extends Component {
 
         return (
             <div className='content-container'>
+                <div id="modal" className="coming-soon-modal">
+                        <h1>Feature Coming Soon</h1>
+                </div>
                 <div className='content'>
                     <h1 className='welcome-message'>Welcome!</h1>
                     <h3 className='second-welcome-message' >Upcoming Appointments</h3>
@@ -93,14 +100,14 @@ class Welcome extends Component {
                 <div className="sidebar">
                     <h3 className='nav-welcome-message' >Quick Links</h3>
                     <Link to='/' >
-                        <div className='sidebar-item blue-hover'>
+                        <div className='sidebar-item blue-hover' onClick={this.showModal}>
                             <i className="fas fa-poll-h welcome-sidebar-icon"></i>
                             <div>View test results</div>
 
                         </div>
                     </Link>
                     <Link to='/' >
-                        <div className='sidebar-item blue-hover'>
+                        <div className='sidebar-item blue-hover' onClick={this.showModal}>
                             <i className="far fa-comments welcome-sidebar-icon"></i>
                             <div>Send a message</div>
                         </div>
@@ -119,7 +126,7 @@ class Welcome extends Component {
                         
                     </Link>
                     <Link to='/' >
-                        <div className='sidebar-item blue-hover'>
+                        <div className='sidebar-item blue-hover' onClick={this.showModal}>
                             <i className="far fa-credit-card welcome-sidebar-icon"></i>     
                             <div>Pay your bill</div>
                         </div>

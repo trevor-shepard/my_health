@@ -1,5 +1,35 @@
 
+.coming-soon-modal {
+    position: absolute;
+    z-index: -1;
+    height: 100px;
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
+    top: 0%;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    -webkit-transition: top 1s ; /* Safari */
+    transition: top 1s;
+    -webkit-box-shadow: 9px 10px 22px 13px rgba(0,0,0,0.57);
+    -moz-box-shadow: 9px 10px 22px 13px rgba(0,0,0,0.57);
+    box-shadow: 9px 10px 22px 13px rgba(0,0,0,0.57);
+}
+.coming-soon-modal h1 {
+    width: 226px;
+    height: 80px;
+    margin: 29px auto;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #003073;
 
+}
+
+.coming-soon-show {
+    z-index: 1;
+    top: 20%
+}
 
 .welcome-content * {
     margin-left: 22px;

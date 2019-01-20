@@ -21,22 +21,22 @@ class Navbar extends Component {
                     <i className="nav-icon far fa-calendar-plus"></i>
                     Visits   
                 </div>
-                <div className='nav-item'>
+                {/* <div className='nav-item'>
                     <i className="nav-icon far fa-heart"></i>
                     Health
-                </div>
-                <div className='nav-item'>
+                </div> */}
+                {/* <div className='nav-item'>
                     <i className="nav-icon far fa-credit-card"></i>
                     Billing
-                </div>
-                <div className='nav-item'>
+                </div> */}
+                {/* <div className='nav-item'>
                     <i className="nav-icon fas fa-book"></i>
                     Resources
-                </div>
-                <div className='nav-item'>
+                </div> */}
+                {/* <div className='nav-item'>
                     <i className="nav-icon fas fa-cog"></i>
                     Settings
-                </div>
+                </div> */}
                 <Logout user={this.props.user} logout={this.props.logout}  />
 
             </div>
