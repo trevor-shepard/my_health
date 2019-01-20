@@ -11,6 +11,8 @@ class PrescriptionForm extends Component {
             loaded: false
         }
         this.selectRx = this.selectRx.bind(this)
+        this.handleContinue = this.handleContinue.bind(this)
+        this.handleConfirm = this.handleConfirm.bind(this)
     }
 
     componentDidMount() {
@@ -38,18 +40,34 @@ class PrescriptionForm extends Component {
         }
 
     }
+
+    handleContinue() {
+        this.props.history.push("/prescriptions/confirm")
+        this.setState({
+            confirm: true
+        })
+    }
+
+    handleConfirm(rxID) {
+        let that = this
+        return () => {
+            this.props.requestRefill(rxID)
+            .then(() => {
+                that.props.history.push("/prescriptions")
+            })
+        }
+    }
     
     
     render() {
 
         let continue_button
-        
         if (this.state.confirm) {
-            continue_button = <button className='m-button'>CONFIRM</button>
-        } if (this.state.rxID) {
-            continue_button = <Link to="/prescriptions/confirm" className='m-button'>CONTINUE</Link>
+            continue_button = <button onClick={this.handleConfirm(this.state.rxID)} className='m-button'>CONFIRM</button>
+        } else if (this.state.rxID) {
+            continue_button = <button onClick={this.handleContinue} className='m-button'>CONTINUE</button>
         } else {
-            continue_button = <button className='m-button disabled'>CONTINUE</button>
+            continue_button = <div>Please select a medication</div>
         }
 
 
@@ -63,6 +81,7 @@ class PrescriptionForm extends Component {
                                     rx={this.props.prescriptions[this.state.rxID]}
                                     provider={this.props.providers[this.props.prescriptions[this.state.rxID].provider_id]}
                                     med={this.props.medications[this.props.prescriptions[this.state.rxID].medication_id]}
+                                    requestRefill={this.props.requestRefill}
                                 />)}
                             />
                             <ProtectedRoute path='/prescriptions' component={() =>(

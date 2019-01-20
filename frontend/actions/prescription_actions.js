@@ -9,7 +9,7 @@ export const receivePrescriptions = (prescriptions) => ({
     prescriptions
 })
 export const receivePrescription = (prescription) => ({
-    type: RECEIVE_PRESCRIPTIONS,
+    type: RECEIVE_PRESCRIPTION,
     prescription
 })
 

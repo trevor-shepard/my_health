@@ -12,7 +12,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
     fetchMedications: () => dispatch(fetchMedications()),
     fetchPrescriptions: () => dispatch(fetchPrescriptions()),
-
+    requestRefill: (prescription_id) => dispatch(requestRefill(prescription_id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PrescriptionForm)

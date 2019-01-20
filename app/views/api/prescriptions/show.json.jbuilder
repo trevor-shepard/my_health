@@ -1,0 +1,1 @@
+json.extract! @prescription, :id, :medication_id, :provider_id, :user_id, :count, :refills, :admin_type, :dosage, :admin_type, :request_pending, :created_at, :pharmacy
