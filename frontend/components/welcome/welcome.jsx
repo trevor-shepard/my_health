@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AppointmentItem from './appointment_item'
 import { Link } from 'react-router-dom'
 import caleandar from '../../util/caleandar'
-import { jsonToDateOnly, parseTimeFromJson } from '../../util/date'
+import { jsonToDate, jsonToDateOnly, parseTimeFromJson } from '../../util/date'
 
 class Welcome extends Component {
     constructor(props){
@@ -72,7 +72,13 @@ class Welcome extends Component {
 
         let upcoming_appointments
         if (Object.values(this.props.appointments).length && Object.values(this.props.providers).length) {
-            upcoming_appointments = Object.values(this.props.appointments).map((appointment) => <AppointmentItem key={appointment.id} appointment={appointment} provider={this.props.providers[appointment.provider_id]} />)
+            upcoming_appointments = Object.values(this.props.appointments).reduce((arr, appointment) => {
+                if (jsonToDate(appointment.start) > Date.now()) {
+                    arr.push(<AppointmentItem key={appointment.id} appointment={appointment} provider={this.props.providers[appointment.provider_id]} />)
+                }
+                return arr
+            },
+            [])
         }
 
         
