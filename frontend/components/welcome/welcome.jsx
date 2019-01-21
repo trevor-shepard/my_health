@@ -70,9 +70,9 @@ class Welcome extends Component {
 
     render() {
 
-        let appointments
+        let upcoming_appointments
         if (Object.values(this.props.appointments).length && Object.values(this.props.providers).length) {
-            appointments = Object.values(this.props.appointments).map((appointment) => <AppointmentItem key={appointment.id} appointment={appointment} provider={this.props.providers[appointment.provider_id]} />)
+            upcoming_appointments = Object.values(this.props.appointments).map((appointment) => <AppointmentItem key={appointment.id} appointment={appointment} provider={this.props.providers[appointment.provider_id]} />)
         }
 
         
@@ -88,7 +88,7 @@ class Welcome extends Component {
                     <h3 className='second-welcome-message' >Upcoming Appointments</h3>
                     <div className='welcome-appointment-content'>
                         <div className='appointment-list'>
-                            {appointments}
+                            {upcoming_appointments}
                         </div>
                         <div className="appointment-calender-container">
                             <div id="caleandar">
