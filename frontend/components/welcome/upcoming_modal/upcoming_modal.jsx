@@ -12,7 +12,7 @@ class UpcomingModal extends React.Component {
         let nextMonthAppts = []
         let futureAppts = []
 
-        if (Object.values(this.props.providers).length && Object.values(this.props.appointments).length) {
+        if (Object.values(this.props.providers).length && Object.values(this.props.appointments).length && Object.values(this.props.clinics).length) {
 
             // find dates for one and two months from now
             let now = new Date()
@@ -43,14 +43,14 @@ class UpcomingModal extends React.Component {
         }
         
         return(
-            <div id="upcoming-modal">
+            <div id="upcoming-modal" className="hidden">
                 <div className="upcoming-modal-title">
                     Upcoming Appointments
                 </div>
                 <div className="upcoming-month-list">
-                    {thisMonthAppts.length ? <MonthDisplay appts={thisMonthAppts} providers={this.props.providers} title={"This Month"} /> : null}
-                    {nextMonthAppts.length ? <MonthDisplay appts={nextMonthAppts} providers={this.props.providers} title={"Next Month"} /> : null}
-                    {futureAppts.length ? <MonthDisplay appts={futureAppts} providers={this.props.providers} title={"Future"} /> : null}
+                    {thisMonthAppts.length ? <MonthDisplay appts={thisMonthAppts} providers={this.props.providers} clinics={this.props.clinics} title={"This Month"} /> : null}
+                    {nextMonthAppts.length ? <MonthDisplay appts={nextMonthAppts} providers={this.props.providers} clinics={this.props.clinics} title={"Next Month"} /> : null}
+                    {futureAppts.length ? <MonthDisplay appts={futureAppts} providers={this.props.providers} clinics={this.props.clinics} title={"Future"} /> : null}
                 </div>
             </div>
         )

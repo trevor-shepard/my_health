@@ -15,6 +15,7 @@ class Welcome extends Component {
     componentDidMount(){
         this.props.fetchAppointments()
         this.props.fetchProviders()
+        this.props.fetchClinics()
     }
     
     componentDidUpdate(oldProps) {
@@ -68,7 +69,10 @@ class Welcome extends Component {
         1700)
     }
 
-
+    showUpcomingModal() {
+        let modal = document.getElementById("upcoming-modal")
+        modal.classList.add("show")
+    }
 
 
     render() {
@@ -77,7 +81,7 @@ class Welcome extends Component {
         if (Object.values(this.props.appointments).length && Object.values(this.props.providers).length) {
             upcoming_appointments = Object.values(this.props.appointments).reduce((arr, appointment) => {
                 if (jsonToDate(appointment.start) > Date.now()) {
-                    arr.push(<AppointmentItem key={appointment.id} appointment={appointment} provider={this.props.providers[appointment.provider_id]} />)
+                    arr.push(<AppointmentItem key={appointment.id} appointment={appointment} provider={this.props.providers[appointment.provider_id]} action={this.showUpcomingModal} />)
                 }
                 return arr
             },

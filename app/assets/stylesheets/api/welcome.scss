@@ -1,10 +1,97 @@
 
+// grey area
+
+
+// provider display
+
+.female-provider-image {
+    height: 45px;
+    width: 45px;
+    background: image-url('female_provider.jpg');
+    background-size: cover;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.male-provider-image {
+    height: 45px;
+    width: 45px;
+    background: image-url('male_provider.png');
+    background-size: cover;
+    border-radius: 25px;
+    padding: 25px;
+    
+}
+
+.provider-show-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.provider-demographics {
+    margin-left: 30px;
+}
 // upcoming appointment modal
 #upcoming-modal {
     position: absolute;
-    z-index: -2;
+    height: 80%;
+    width: 80%;
+    background-color: #FFFF;
+    color: #002F73;
+    margin-top: 30px;
+    -webkit-box-shadow: 7px 10px 137px 19px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 10px 137px 19px rgba(0,0,0,0.75);
+    box-shadow: 7px 10px 137px 19px rgba(0,0,0,0.75);
+    overflow: scroll;
 }
 
+.hidden{
+    z-index: -1;
+}
+
+.show {
+    z-index: 2;
+}
+
+.upcoming-modal-title {
+    width: 100%;
+    background-color: #F8FBFD;
+    font-size: 1.6rem;
+    padding: 10px;
+}
+
+.upcoming-month-list {
+    margin: 35px;
+}
+
+.upcoming-month-container {
+    margin-bottom: 50px;
+}
+
+
+.upcoming-month-title {
+    margin: 15px;
+    margin-left: 0;
+    font: bold;
+    font-size: 1.4rem;
+}
+
+.upcoming-appointment-list-item {
+    width: 480px;
+    height: 230px;
+    margin: 10px;
+    padding: 20px;
+    border-left: 5px solid #003073;
+    -webkit-box-shadow: 2px 2px 23px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 23px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 23px 0px rgba(0,0,0,0.75);
+}
+
+.upcoming-appointment-list-item-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
 
 
 // feature coming soon modal

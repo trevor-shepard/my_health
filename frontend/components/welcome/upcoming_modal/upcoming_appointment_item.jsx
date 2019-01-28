@@ -1,8 +1,10 @@
 import React from 'react'
 
+import ProviderShow from '../provider_show'
+
 import { jsonToDate, getWeekday, getMonth } from '../../../util/date'
 
-const AppointmentItem = ({ appointment, provider }) => {
+const AppointmentItem = ({ appointment, provider, clinic }) => {
     let reason
     if (appointment.reason === 'new_problem') {
         reason = 'Regular Office Visit'
@@ -18,9 +20,10 @@ const AppointmentItem = ({ appointment, provider }) => {
 
     
     return (
-        <div key={appointment.id} className='appointment-list-item blue-hover'>
-            <div> {reason} at {date.getHours()}: {date.getMinutes()}</div>
+        <div key={appointment.id} className='upcoming-appointment-list-item'>
+            <div className="upcoming-appointment-list-item-title"> {reason} at {date.getHours()}: {date.getMinutes()}</div>
             <div>{getWeekday(date.getDay().toString())} {getMonth(date.getMonth())} {date.getDate()}, {date.getFullYear()}</div>
+            <ProviderShow provider={provider} clinic={clinic} />
         </div>
     )
 }
