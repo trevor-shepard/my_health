@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import AppointmentItem from './appointment_item'
 import { Link } from 'react-router-dom'
+
+import AppointmentItem from './appointment_item'
+import UpcomingModal from './upcoming_modal/upcoming_modal_container'
+
 import caleandar from '../../util/caleandar'
 import { jsonToDate, jsonToDateOnly, parseTimeFromJson } from '../../util/date'
 
@@ -54,8 +57,8 @@ class Welcome extends Component {
         }
     }
     
-    showModal() {
-        let modal = document.getElementById("modal")
+    showComingSoonModal() {
+        let modal = document.getElementById("coming-soon-modal")
         
         modal.classList.add("coming-soon-show")
 
@@ -86,9 +89,10 @@ class Welcome extends Component {
 
         return (
             <div className='content-container'>
-                <div id="modal" className="coming-soon-modal">
+                <div id="coming-soon-modal" className="coming-soon-modal">
                         <h1>Feature Coming Soon</h1>
                 </div>
+                <UpcomingModal />
                 <div className='content'>
                     <h1 className='welcome-message'>Welcome!</h1>
                     <h3 className='second-welcome-message' >Upcoming Appointments</h3>
@@ -106,14 +110,14 @@ class Welcome extends Component {
                 <div className="sidebar">
                     <h3 className='nav-welcome-message' >Quick Links</h3>
                     <Link to='/' >
-                        <div className='sidebar-item blue-hover' onClick={this.showModal}>
+                        <div className='sidebar-item blue-hover' onClick={this.showComingSoonModal}>
                             <i className="fas fa-poll-h welcome-sidebar-icon"></i>
                             <div>View test results</div>
 
                         </div>
                     </Link>
                     <Link to='/' >
-                        <div className='sidebar-item blue-hover' onClick={this.showModal}>
+                        <div className='sidebar-item blue-hover' onClick={this.showComingSoonModal}>
                             <i className="far fa-comments welcome-sidebar-icon"></i>
                             <div>Send a message</div>
                         </div>
@@ -132,7 +136,7 @@ class Welcome extends Component {
                         
                     </Link>
                     <Link to='/' >
-                        <div className='sidebar-item blue-hover' onClick={this.showModal}>
+                        <div className='sidebar-item blue-hover' onClick={this.showComingSoonModal}>
                             <i className="far fa-credit-card welcome-sidebar-icon"></i>     
                             <div>Pay your bill</div>
                         </div>
