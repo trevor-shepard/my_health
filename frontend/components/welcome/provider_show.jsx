@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProviderShow = ({provider, clinic}) => {
     let females = ["Flannigan", 'Tibbs']
-
+    
     
     return (
         <div className="provider-show-container">
