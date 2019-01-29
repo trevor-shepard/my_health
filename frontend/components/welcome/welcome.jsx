@@ -10,6 +10,8 @@ import { jsonToDate, jsonToDateOnly, parseTimeFromJson } from '../../util/date'
 class Welcome extends Component {
     constructor(props){
         super(props)
+        this.showUpcomingModal = this.showUpcomingModal.bind(this)
+        this.hideUpcomingModal = this.hideUpcomingModal.bind(this)
     }
 
     componentDidMount(){
@@ -69,17 +71,32 @@ class Welcome extends Component {
         1700)
     }
 
+    hideUpcomingModal(e) {
+        if (!(e.target === "upcoming-modal")) {
+            let modal = document.getElementById("upcoming-modal")
+            modal.classList.remove("show")
+            
+            let grey = document.getElementById('grey-area')
+            grey.classList.remove("z-two")
+
+        }
+    }
+
     showUpcomingModal(e) {
         let modal = document.getElementById("upcoming-modal")
         modal.classList.add("show")
+        modal.addEventListener("click", this.handleModalClick)
+        let greyArea = document.getElementById("grey-area")
+    
+        greyArea.addEventListener("click", this.hideUpcomingModal)
+        greyArea.classList.add("z-two")
+
     }
 
-
-    hideUpcomingModal(e) {
-        
-        let modal = document.getElementById("upcoming-modal")
-        modal.classListf.remove("show")
+    handleModalClick(e) {
+        console.log("click")
     }
+    
 
 
     render() {

@@ -14,6 +14,7 @@ const App = ({ store }) => (
   <Provider store={ store }>
     <HashRouter>
       <div>
+        <div id="grey-area" className="neg-z-one"/>
         <ProtectedRoute component={NavBarContainer} />
         <Switch>
           <AuthRoute exact path="/login" component={Splash} />
