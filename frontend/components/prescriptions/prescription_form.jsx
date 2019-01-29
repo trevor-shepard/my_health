@@ -72,7 +72,7 @@ class PrescriptionForm extends Component {
 
 
         return(
-            <div className='content-container'>
+            <div id='content-container'>
                 <div className='content'>
                     <HashRouter>
                         <Switch>

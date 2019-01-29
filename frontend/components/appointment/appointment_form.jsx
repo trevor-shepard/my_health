@@ -101,7 +101,7 @@ class AppointmentForm extends Component {
 
     render() {
         return (
-            <div className='content-container'>
+            <div id='content-container'>
                 <div className='content'>
                     <HashRouter>
                         <Switch>

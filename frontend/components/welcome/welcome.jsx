@@ -69,9 +69,16 @@ class Welcome extends Component {
         1700)
     }
 
-    showUpcomingModal() {
+    showUpcomingModal(e) {
         let modal = document.getElementById("upcoming-modal")
         modal.classList.add("show")
+    }
+
+
+    hideUpcomingModal(e) {
+        
+        let modal = document.getElementById("upcoming-modal")
+        modal.classListf.remove("show")
     }
 
 
@@ -92,7 +99,7 @@ class Welcome extends Component {
 
 
         return (
-            <div className='content-container'>
+            <div id='content-container'>
                 <div id="coming-soon-modal" className="coming-soon-modal">
                         <h1>Feature Coming Soon</h1>
                 </div>
