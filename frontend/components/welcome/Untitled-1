@@ -1,0 +1,12 @@
+function myFunction() {
+ var d = new Date();
+ var hours = d.getHours();
+ var currentTime = d.toLocaleDateString();
+ var counter = SpreadsheetApp.getActiveSheet().getRange('B1').getValues();
+ 
+ if (hours >= 6 && hours <= 18) {
+ var response = UrlFetchApp.fetch("https://conway-expand.herokuapp.com/");
+ SpreadsheetApp.getActiveSheet().getRange('A' + counter).setValue('Visted at ' + currentTime + " " + hours + "h");
+ SpreadsheetApp.getActiveSheet().getRange('B1').setValue(Number(counter) + 1);
+ }
+}

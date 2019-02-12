@@ -22,7 +22,7 @@ class Navbar extends Component {
         return (<div id="header">
             <div className='nav-links'>
                 <Link to='/' className="nav-logo"> </Link>
-                <div className='nav-item'>
+                {/* <div className='nav-item'>
                     <i className="nav-icon far fa-user"></i>
                     {this.props.user.fname}
                 </div>
@@ -49,7 +49,7 @@ class Navbar extends Component {
                 <div className='nav-item' onClick={this.showModal}>
                     <i className="nav-icon fas fa-cog"></i>
                     Settings
-                </div>
+                </div> */}
                 <Logout user={this.props.user} logout={this.props.logout}  />
 
             </div>

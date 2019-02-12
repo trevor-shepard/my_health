@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    justify-content: space-between; 
     box-shadow: 0 4px 2px -2px gray;
     z-index: 1;
     background-color: white;
@@ -13,11 +14,12 @@
 
 .nav-links {
     height: 100%;
-    widows: 1280px;
-    margin-left: 81px;
+    width: 100%;
+    margin-left: 78px;
     margin-right: 81px;
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
 }
 
 .nav-logo {
@@ -48,6 +50,7 @@
 .logout-button {
     margin-left: 135px;
     align-self: center;
+    margin-right: 4%;
     cursor: pointer;
 }
 

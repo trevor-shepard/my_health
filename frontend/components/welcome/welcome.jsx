@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import AppointmentItem from './appointment_item'
 import UpcomingModal from './upcoming_modal/upcoming_modal_container'
 
-import caleandar from '../../util/caleandar'
+import Calender from '../../util/ezcal'
 import { jsonToDate, jsonToDateOnly, parseTimeFromJson } from '../../util/date'
 
 class Welcome extends Component {
@@ -24,39 +24,22 @@ class Welcome extends Component {
         
         // Calender sourced from https://github.com/jackducasse/caleandar 
         if ((Object.values(this.props.appointments).length && Object.values(this.props.providers).length)) {
-
             let provider
-
-            let element = document.getElementById('caleandar')
+            
+            let element = document.getElementById('ez-cal')
             element.innerHTML = ""
+
+            let cal = new Calender(element)
     
             let appointments = Object.values(this.props.appointments)
-            let events = appointments.map((el) => {
-                
-                provider = this.props.providers[el.provider_id]
-                
-                return {
-                    'Date': jsonToDateOnly(el.start),
-                    'Title': `Appointment with ${provider.fname} ${provider.lname} at ${parseTimeFromJson(el.start)}`
-                }
+            appointments.forEach(appointment => {
+                let apptDay = jsonToDateOnly(appointment.start)
+                provider = this.props.providers[appointment.provider_id]
+                cal.addTitle(apptDay, `Appointment with ${provider.fname} ${provider.lname} at ${parseTimeFromJson(appointment.start)}`)
+                cal.addClick(apptDay, this.showUpcomingModal)
             })
-    
-            let settings = {
-                Color: '',
-                LinkColor: '',
-                NavShow: true,
-                NavVertical: false,
-                NavLocation: '',
-                DateTimeShow: true,
-                DateTimeFormat: 'mmm, yyyy',
-                DatetimeLocation: '',                                                   
-                EventClick: '',
-                EventTargetWholeDay: false,
-                DisabledDays: [],
 
-            }
-            
-            caleandar(element, events, settings)
+            cal.mountDays()
         }
     }
     
@@ -83,6 +66,7 @@ class Welcome extends Component {
     }
 
     showUpcomingModal(e) {
+        
         let modal = document.getElementById("upcoming-modal")
         modal.classList.add("show")
         modal.addEventListener("click", this.handleModalClick)
@@ -129,7 +113,7 @@ class Welcome extends Component {
                             {upcoming_appointments}
                         </div>
                         <div className="appointment-calender-container">
-                            <div id="caleandar">
+                            <div id="ez-cal">
 
                             </div>
                         </div>
@@ -137,19 +121,19 @@ class Welcome extends Component {
                 </div>
                 <div className="sidebar">
                     <h3 className='nav-welcome-message' >Quick Links</h3>
-                    <Link to='/' >
+                    {/* <Link to='/' >
                         <div className='sidebar-item blue-hover' onClick={this.showComingSoonModal}>
                             <i className="fas fa-poll-h welcome-sidebar-icon"></i>
                             <div>View test results</div>
 
                         </div>
-                    </Link>
-                    <Link to='/' >
+                    </Link> */}
+                    {/* <Link to='/' >
                         <div className='sidebar-item blue-hover' onClick={this.showComingSoonModal}>
                             <i className="far fa-comments welcome-sidebar-icon"></i>
                             <div>Send a message</div>
                         </div>
-                    </Link>
+                    </Link> */}
                     <Link to='/appointments/new' >
                         <div className='sidebar-item blue-hover'>
                             <i className="fas fa-calendar-day welcome-sidebar-icon"></i>
@@ -163,12 +147,12 @@ class Welcome extends Component {
                         </div>
                         
                     </Link>
-                    <Link to='/' >
+                    {/* <Link to='/' >
                         <div className='sidebar-item blue-hover' onClick={this.showComingSoonModal}>
                             <i className="far fa-credit-card welcome-sidebar-icon"></i>     
                             <div>Pay your bill</div>
                         </div>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         )
