@@ -66,7 +66,6 @@ class Welcome extends Component {
     }
 
     showUpcomingModal(e) {
-        
         let modal = document.getElementById("upcoming-modal")
         modal.classList.add("show")
         modal.addEventListener("click", this.handleModalClick)
