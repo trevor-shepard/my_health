@@ -225,6 +225,8 @@ class Calender {
         this.currMonth = new Month(this.startofMonth)
 
         this.constructEl()
+
+        this.mountDays()
     }
 
     loadPreviousMonth() {
