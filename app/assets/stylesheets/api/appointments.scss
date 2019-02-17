@@ -280,3 +280,113 @@
     height: 70px;
     border: 1px solid #aaa;
 }
+
+
+// appointment show
+.appointment-show-title {
+    margin-left: 2.5%; 
+    padding: 0.7rem 5rem 0.5rem 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 2rem;
+    line-height: 2rem;
+    color: #003073;
+}
+
+.appointment-show-detail {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 95%;
+    border: 1px solid grey;
+    -webkit-box-shadow: -1px 4px 14px 3px rgba(196,190,196,1);
+    -moz-box-shadow: -1px 4px 14px 3px rgba(196,190,196,1);
+    box-shadow: -1px 4px 14px 3px rgba(196,190,196,1);
+}
+
+.appointment-show-detail-top {
+    display: flex;
+    flex-direction: row;
+}
+
+.appointment-show-time-directions {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+}
+
+.appointment-show-time-directions > div {
+    margin: 10px;
+}
+
+.appointment-show-time {
+    display: flex;
+    flex-direction: row;
+}
+
+.appointment-show-time  div {
+    font-size: 1.2rem;
+}
+.appointment-show-detail i {
+    font-size: 21px;
+    margin: 3px;
+    margin-right: 5px;
+}
+
+.appointment-show-driving {
+    display: flex;
+    flex-direction: row;
+}
+
+.appointment-show-clinic {
+    width: 30%;
+}
+
+.appointment-show-clinic-name{
+    font-weight: bold;
+}
+
+.appointment-show-greybar {
+    width: 95%;
+    height: 1px;
+    background-color: #E0E0E0;
+}
+
+.appointment-show-cancel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.appointment-show-cancel div {
+    text-align: center;
+    margin: 10px;
+}
+
+.appointment-show-modal {
+    position: absolute;
+    height: 46%;
+    width: 39%;
+    
+    color: #002F73;
+    margin-top: 30px;
+    -webkit-box-shadow: 7px 10px 137px 19px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 10px 137px 19px rgba(0,0,0,0.75);
+    box-shadow: 7px 10px 137px 19px rgba(0,0,0,0.75);
+    background-color: #FFFF;
+    overflow: scroll;
+}
+
+.appoinment-show-modal-text {
+    border: 1px solid grey;
+    background-color: #ECF5FA;
+    margin: 5%;
+    padding: 2%;
+    font-size: 1.3rem;
+}
+
+.appointment-show-modal button {
+    margin-left: 43%
+}
+

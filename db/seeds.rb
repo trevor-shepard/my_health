@@ -83,7 +83,8 @@ plazaPMG = Clinic.create(
     county: "Multnomah", 
     phone: "503 215-6405", 
     fax: "503 215-6429", 
-    suite: "454"
+    suite: "454",
+    parking_instructions: "The Plaza Clinic is located on the fourth floor of the Providence Professional Plaza at 5050 NE Hoyt. The building has street parking on Glisan. Valet and self parking in the parking structure can be accessed from NE Hoyt St. To get to NE Hoyt St from the east, turn right off Glisan on NE 47th Ave and immediate right onto NE Hoyt. To get to NE Hoyt St from the west, turn left at the intersection of Glisan and 47th St, and immediately turn right on NE Hoyt."
     )
 
 legacyClinic = Clinic.create(
@@ -95,19 +96,20 @@ legacyClinic = Clinic.create(
     county: "Multnomah", 
     phone: "503 413-8010", 
     fax: "503 494-5023", 
-    suite: "315"
+    suite: "315",
+    parking_instructions: "The Legacy Geriatrics Clinic is located on the second floor of Legacy Good Samaritan Hosptial at 222 NW Lovejoy Ave. The Building has valet and self parking down the street at a garage off NW Marshall. To get to the clinic from the Burnside, turn onto NW 23rd Ave. To get to the clinic from the 405 Bridge, take Exit 3 for NW 23rd Ave"
     )
 
 clinic = Clinic.create(
-    name: "Compass Oncology", 
+    name: "Compass Oncology- Rose Quarter", 
     address: "265 N Broadway", 
     city: "Portland",
     state: "OR", 
     zip: 97227, 
     county: "Multnomah", 
-    phone: "503 413-8010", 
-    fax: "503 494-5023", 
-    suite: "315"
+    phone: "503 280-1223", 
+    fax: "503 528-5252", 
+    parking_instructions: "The Rose Quarter Clinic is located across NE Broadway from the Rose Garden Amphitheatre. Parking is provided in the lot directly in front of the clinic. To arrive from the east, take the Broadway Bridge. From the west, take NW Broadway"
 )
     
 #providers

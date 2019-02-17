@@ -8,17 +8,17 @@ import WelcomeContainer from './welcome/welcome_container';
 import NavBarContainer from './navbar/navbar_container';
 import AppointmentFormContainer from './appointment/appointment_form_container';
 import PrescriptionFormContainer from './prescriptions/prescription_form_container';
-
+import AppointmentShowContainer from './welcome/appointment_show_container';
 
 const App = ({ store }) => (
   <Provider store={ store }>
     <HashRouter>
       <div>
-        <div id="grey-area" className="neg-z-one"/>
         <ProtectedRoute component={NavBarContainer} />
         <Switch>
           <AuthRoute exact path="/login" component={Splash} />
           <AuthRoute exact path='/signup' component={Splash} />
+          <ProtectedRoute path='/appointment/:id' component={AppointmentShowContainer} />
           <ProtectedRoute path='/appointments' component={AppointmentFormContainer} />
           <ProtectedRoute path='/prescriptions' component={PrescriptionFormContainer} />
           <ProtectedRoute path='/' component={WelcomeContainer} />
@@ -26,6 +26,6 @@ const App = ({ store }) => (
       </div>  
     </HashRouter>
   </Provider>
-)
+);
 
-export default App
+export default App;

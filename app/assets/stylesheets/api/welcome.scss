@@ -13,7 +13,7 @@
     z-index: -1;
 }
 
-.z-two {
+.z-three {
     z-index: 3;
 }
 
@@ -108,6 +108,10 @@
     margin-bottom: 5px;
 }
 
+.upcoming-appointment-list-item-title:hover {
+    text-decoration: underline; 
+}
+
 
 // feature coming soon modal
 .coming-soon-modal {
@@ -153,7 +157,8 @@
 .welcome-appointment-content {
     border: 1px solid #E0E0E0;
     display: flex;
-
+    margin: 19px;
+    margin-top: 4px;
 }
 
 .welcome-message {
@@ -181,13 +186,14 @@
 }
 .appointment-list-item {
     width: 90%;
-    height: 102px;
+    height: 85px;
     margin: 2px;
     padding: 20px;
 }
 
-second-welcome-message
-
+.second-welcome-message{
+    margin-bottom: 0;
+}
 
 // sidebar
 
@@ -306,4 +312,21 @@ second-welcome-message
     color: white;
     background-color: #003073;
     border-radius: 37px;
+}
+
+.appointment-item-start-time {
+    font-size: .95rem;
+}
+
+.greybar {
+    width: 400px;
+    height: 1px;
+    background-color: #E0E0E0;
+    position: absolute;
+    margin-top: 64px;
+}
+
+
+.appointment-list-item-content {
+    margin-top: -10px;
 }

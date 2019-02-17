@@ -60,7 +60,7 @@ class Welcome extends Component {
             modal.classList.remove("show")
             
             let grey = document.getElementById('grey-area')
-            grey.classList.remove("z-two")
+            grey.classList.remove("z-three")
 
         }
     }
@@ -68,16 +68,12 @@ class Welcome extends Component {
     showUpcomingModal(e) {
         let modal = document.getElementById("upcoming-modal")
         modal.classList.add("show")
-        modal.addEventListener("click", this.handleModalClick)
+        
         let greyArea = document.getElementById("grey-area")
     
         greyArea.addEventListener("click", this.hideUpcomingModal)
-        greyArea.classList.add("z-two")
+        greyArea.classList.add("z-three")
 
-    }
-
-    handleModalClick(e) {
-        console.log("click")
     }
     
 
@@ -100,6 +96,7 @@ class Welcome extends Component {
 
         return (
             <div id='content-container'>
+                <div id="grey-area" className="neg-z-one"/>
                 <div id="coming-soon-modal" className="coming-soon-modal">
                         <h1>Feature Coming Soon</h1>
                 </div>
@@ -113,7 +110,6 @@ class Welcome extends Component {
                         </div>
                         <div className="appointment-calender-container">
                             <div id="ez-cal">
-
                             </div>
                         </div>
                     </div>

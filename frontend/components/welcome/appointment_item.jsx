@@ -18,10 +18,13 @@ const AppointmentItem = ({ appointment, provider, clinic, action }) => {
     
     return (
         <div key={appointment.id} className='appointment-list-item blue-hover' onClick={action}>
-            <div> {reason} with {provider.fname} {provider.lname}, </div>
-            <div>{provider.degree}</div>
-            <div>{getWeekday(date.getDay().toString())} {getMonth(date.getMonth())} {date.getDate()}, {date.getFullYear()}</div>
-            <div>Starts at {date.getHours()}: {date.getMinutes()}</div>
+            <div className="greybar"> </div>
+            <div className="appointment-list-item-content">
+                <div> {reason} with {provider.fname} {provider.lname}, {provider.degree}</div>
+                <div>{getWeekday(date.getDay().toString())} {getMonth(date.getMonth())} {date.getDate()}, {date.getFullYear()}</div>
+                <div className="appointment-item-start-time">Starts at {date.getHours()}: {date.getMinutes()}</div>
+            </div>
+            
 
         </div>
     )

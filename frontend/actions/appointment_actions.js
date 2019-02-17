@@ -32,6 +32,7 @@ export const clearAppointmentErrors = () => ({
     type: CLEAR_APPOINTMENT_ERRORS
 })
 
+
 // thunk action controllers
 
 export const createAppointment = (appointment) => dispatch => (
@@ -64,4 +65,12 @@ export const updateAppointment = (appointment) => dispatch => (
         (response) => dispatch(recieveAppointment(response)),
         (response) => dispatch(recieveAppointmentErrors(response))
     )
+)
+
+export const cancelAppointment = (appointmentId) => dispatch => (
+    AppointmentApiUtil.destroyAppointment(appointmentId)
+        .then(
+            () => dispatch(removeAppointment(appointmentId)),
+            (response) => dispatch(recieveAppointmentErrors(response))
+        )
 )

@@ -13,6 +13,7 @@
 #  dosage          :string
 #  admin_type      :string
 #  request_pending :boolean          not null
+#  pharmacy        :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -2,6 +2,8 @@ import React from 'react'
 
 import ProviderShow from '../provider_show'
 
+import {Link} from 'react-router-dom'
+
 import { jsonToDate, getWeekday, getMonth } from '../../../util/date'
 
 const AppointmentItem = ({ appointment, provider, clinic }) => {
@@ -18,10 +20,10 @@ const AppointmentItem = ({ appointment, provider, clinic }) => {
     
     let date = jsonToDate(appointment.start)
 
-    
     return (
+    
         <div key={appointment.id} className='upcoming-appointment-list-item'>
-            <div className="upcoming-appointment-list-item-title"> {reason} at {date.getHours()}: {date.getMinutes()}</div>
+            <Link to={`appointment/${appointment.id}`} className="upcoming-appointment-list-item-title"> {reason} at {date.getHours()}:{date.getMinutes()}</Link>
             <div>{getWeekday(date.getDay().toString())} {getMonth(date.getMonth())} {date.getDate()}, {date.getFullYear()}</div>
             <ProviderShow provider={provider} clinic={clinic} />
         </div>

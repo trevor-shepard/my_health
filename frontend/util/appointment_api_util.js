@@ -26,3 +26,10 @@ export const updateAppointment = appointment => (
         data: { appointment }
     })
 )
+
+export const destroyAppointment = id => (
+    $.ajax({
+        method: 'delete',
+        url: `/api/appointments/${id}`
+    })
+)
