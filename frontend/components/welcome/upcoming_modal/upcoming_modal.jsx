@@ -32,6 +32,9 @@ class UpcomingModal extends React.Component {
             // split appointments into approperate time slot list
             Object.values(this.props.appointments).forEach(appt => {
                 let apptDate = DateUtil.jsonToDate(appt.start)
+
+                if (apptDate < now) return
+
                 if (apptDate < nextMonth) {
                     thisMonthAppts.push(appt)
                 } else if (apptDate < monthAfterNext) {
@@ -40,6 +43,17 @@ class UpcomingModal extends React.Component {
                     futureAppts.push(appt)
                 }
             });
+
+            let dateSort = (a, b) => {
+                let aDate = DateUtil.jsonToDate(a.start)
+                let bDate = DateUtil.jsonToDate(b.start)
+                return aDate - bDate
+            }
+
+            thisMonthAppts.sort(dateSort)
+            nextMonthAppts.sort(dateSort)
+            futureAppts.sort(dateSort)
+            
         }
         
         return(
