@@ -44,7 +44,7 @@ class UpcomingModal extends React.Component {
                 }
             });
 
-            let dateSort = (a, b) => {
+            const dateSort = (a, b) => {
                 let aDate = DateUtil.jsonToDate(a.start)
                 let bDate = DateUtil.jsonToDate(b.start)
                 return aDate - bDate

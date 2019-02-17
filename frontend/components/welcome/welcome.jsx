@@ -89,6 +89,13 @@ class Welcome extends Component {
                 return arr
             },
             [])
+
+            upcoming_appointments.sort((a, b) => {
+                let aDate = jsonToDate(a.props.appointment.start)
+                let bDate = jsonToDate(b.props.appointment.start)
+                return aDate - bDate
+            })
+
         }
 
         
