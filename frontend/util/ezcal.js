@@ -284,39 +284,6 @@ class Calender {
         })
     }
 
-    
-
-    mountClick() {
-
-    }
-
 }
 
 export default Calender
-
-// sample calender setup
-// document.addEventListener("DOMContentLoaded", () => {
-//     let ezCal = document.getElementById('ez-cal')
-    
-//     let cal = new Calender(ezCal)
-
-//     const exampleCallback = () => {
-//         window.alert("EVENT")
-//     }
-
-//     let today = new Date();
-//     let tomorrow = new Date();
-//     tomorrow.setDate(today.getDate()+1);
-    
-//     cal.addTitle(today, "my first title")
-//     cal.addTitle(today, "my second title")
-//     cal.addClick(today, exampleCallback)
-
-    
-//     cal.addTitle(tomorrow, "my third title")
-//     cal.addTitle(tomorrow, "my fourth title")
-//     cal.addClick(tomorrow, exampleCallback)
-
-    
-//     cal.mountDays()
-// })

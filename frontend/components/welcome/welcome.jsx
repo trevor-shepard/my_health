@@ -98,8 +98,6 @@ class Welcome extends Component {
 
         }
 
-        
-
 
         return (
             <div id='content-container'>

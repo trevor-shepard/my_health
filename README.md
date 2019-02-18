@@ -15,10 +15,10 @@
 
 ### Full Stack Application
 * Ruby on Rails Backend with Postgres Database
-* * Api with jbuilder
+  * Api with jbuilder
 * React/Redux Frontend
-* * No external libraries used for date handeling
-* * No external libraries used for styling
+  * No external libraries used for date handeling
+  * No external libraries used for styling
 
 ### User Authentication
 * Fully functional signin/ signup features
