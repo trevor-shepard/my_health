@@ -25,8 +25,10 @@ class SessionForm extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleSelect = this.handleSelect.bind(this)
         this.demoLogin = this.demoLogin.bind(this);
         this.errorsClear = this.errorsClear.bind(this);
+
 
     }
 
@@ -50,7 +52,21 @@ class SessionForm extends Component {
     }
 
     handleInput(field) {
-        return (e) => this.setState({[field]: e.target.value})
+        return (e) => {
+            if (e.target.value.length) {
+                let title = e.target.parentElement.children[0]
+                title.classList.add('splash-input-title-selected')
+            } else {
+                e.target.parentElement.children[0].classList.remove('splash-input-title-selected')
+            }
+            
+            this.setState({[field]: e.target.value})
+        }
+    }
+
+    handleSelect(e) {
+        let title = e.target.parentElement.children[0]
+        title.classList.add('splash-input-title-selected')
     }
 
     render() {
@@ -74,23 +90,29 @@ class SessionForm extends Component {
         let other
         if (this.props.formType === 'SIGN UP') {
             dob = (
-                <label>
-                    Date of Birth
-                    <input type="date" placeholder='' onChange={this.handleInput('dob')}/>
+                <label className='splash-input-label'>
+                    <div className='splash-input-title'>
+                        Date of Birth
+                    </div>
+                    <input type="date" placeholder='' onChange={this.handleInput('dob')} onSelect={this.handleSelect}/>
                 </label>
             )
             fname = (
-                <label>
-                    First Name
+                <label className='splash-input-label'>
+                    <div className='splash-input-title'>
+                        First Name
+                    </div>
                     <br/>
-                    <input type="input" onChange={this.handleInput('fname')} />
+                    <input type="input" onChange={this.handleInput('fname')} onSelect={this.handleSelect} />
                 </label>
             )
             lname = (
-                <label>
-                    Last Name
+                <label className='splash-input-label'>
+                    <div className='splash-input-title'>
+                        Last Name
+                    </div>
                     <br/>
-                    <input type="input" onChange={this.handleInput('lname')} />
+                    <input type="input" onChange={this.handleInput('lname')} onSelect={this.handleSelect} />
                 </label>
             )
             other = (
@@ -116,12 +138,6 @@ class SessionForm extends Component {
             )
         }
 
-
-
-
-
-
-
         return (
             <div className='form-container'>
                 <div className="language">
@@ -146,17 +162,17 @@ class SessionForm extends Component {
                         <option>SW Washington (Clark & Cowlitz Counties)</option>
                         <option>Washington (excluding Clark & Cowlitz Counties)</option>
                     </select>
+                    <br/>
 
+                    <label className='splash-input-label'>
+                        <div className='splash-input-title'>MyChart Username</div>
+                        <input type="text"  onChange={this.handleInput('username')} onClick={this.handleSelect}/>
+                    </label>
 
-                        <label>
-                            MyHealth Username
-                            <input type="text"  onChange={this.handleInput('username')} />
-                        </label>
-
-                    <label>
-                        Password
-                        <br></br>
-                        <input type="password" onChange={this.handleInput('password')} />
+                    <label className='splash-input-label'>
+                        <div className='splash-input-title'>Password</div>
+                        
+                        <input type="password"  onChange={this.handleInput('password')} onClick={this.handleSelect} />
                     </label>
 
                     { fname }

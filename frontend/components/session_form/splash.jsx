@@ -13,10 +13,7 @@ export default () => (
                 <div className="logo-container">
                      <Link to='/' className="logo-splash"> </Link> 
                 </div>
-                <div>
-                    {/* Link to location pages */}
-                    <Link to='/'>Not from these areas?</Link>
-                </div>
+                
                 <div className='splash-list-row splash-row-one'>
                     <div className='splash-list-item'>
                         <i className="far fa-comments welcome-sidebar-icon"></i>
@@ -32,7 +29,7 @@ export default () => (
                         <div className="splash-list-text">
                             <h2>Access your test results</h2>
                             <span className="info">
-                                No more waiting for a phone call or letter – view your results and your doctor's comments within days
+                                No more waiting for a phone call or letters View your results and your doctor's comments within days
                             </span>
                         </div>
                     </div>
